@@ -1,0 +1,32 @@
+[
+  {
+    "title": "alan wake",
+    "year": "2012",
+    "poster-url": "/assets/long-posters/alanwake.jpg",
+    "mini-poster-url": "/assets/mini-posters/alanwake.jpg"
+  },
+  {
+    "title": "eternal threads",
+    "year": "2022",
+    "poster-url": "/assets/long-posters/eternals.jpg",
+    "mini-poster-url": "/assets/mini-posters/eternals.png"
+  },
+  {
+    "title": "jedi: fallen order",
+    "year": "2019",
+    "poster-url": "/assets/long-posters/jedi.jpg",
+    "mini-poster-url": "/assets/mini-posters/jedi.png"
+  },
+  {
+    "title": "icarus",
+    "year": "2021",
+    "poster-url": "/assets/long-posters/icarus.jpg",
+    "mini-poster-url": "/assets/mini-posters/icarus.png"
+  },
+  {
+    "title": "dolmen",
+    "year": "2022",
+    "poster-url": "/assets/long-posters/dolmen.jpg",
+    "mini-poster-url": "/assets/mini-posters/dolmen.png"
+  }
+]

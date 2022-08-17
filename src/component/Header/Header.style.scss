@@ -1,0 +1,20 @@
+.Header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 0;
+  }
+
+  &-Right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5em;
+  }
+}

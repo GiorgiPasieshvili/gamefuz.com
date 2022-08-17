@@ -1,0 +1,49 @@
+.Search {
+  &-Bar {
+    height: 52px;
+    position: relative;
+
+    input {
+      font-family: var(--font-secondary);
+      background-color: rgba(48, 48, 48, .7);
+      color: rgba(255, 255, 255, 0.7);
+      outline: none;
+      border: none;
+
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+
+      width: 0;
+      height: 100%;
+      border-radius: 30px;
+      padding-left: 36px;
+      opacity: 0;
+
+      position: absolute;
+      right: 0;
+      transition: 1s;
+    }
+
+    img {
+      cursor: pointer;
+      transition: 1s;
+      opacity: .4;
+    }
+
+    &:hover {
+      input {
+        width: 400px;
+        opacity: 1;
+      }
+
+      img {
+        transform: scale(0.7);
+        opacity: 1;
+      }
+    }
+  }
+
+  // &-Results {
+    
+  // }
+}

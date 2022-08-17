@@ -1,0 +1,22 @@
+.Companies {
+  .Carousel {
+    height: 116px;
+
+    &-Item {
+      width: 190px;
+      background: #222;
+
+      a {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+}

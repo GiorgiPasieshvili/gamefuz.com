@@ -1,0 +1,145 @@
+[
+  {
+    "type": "top",
+    "title": "top games",
+    "children": [
+      {
+        "id": 1,
+        "title": "alan wake",
+        "image": "/assets/normal-posters/alanwake.jpg"
+      },
+      {
+        "id": 2,
+        "title": "far cry 6",
+        "image": "/assets/normal-posters/farcry.png"
+      },
+      {
+        "id": 3,
+        "title": "icarus",
+        "image": "/assets/normal-posters/icarus.jpeg"
+      },
+      {
+        "id": 4,
+        "title": "jedi: fallen order",
+        "image": "/assets/normal-posters/jedi.jpg"
+      },
+      {
+        "id": 5,
+        "title": "farming simulator",
+        "image": "/assets/normal-posters/farmingsim.jpg"
+      },
+      {
+        "id": 6,
+        "title": "jedi: fallen order",
+        "image": "/assets/normal-posters/jedi.jpg"
+      },
+      {
+        "id": 7,
+        "title": "icarus",
+        "image": "/assets/normal-posters/icarus.jpeg"
+      },
+      {
+        "id": 8,
+        "title": "far cry 6",
+        "image": "/assets/normal-posters/farcry.png"
+      },
+      {
+        "id": 9,
+        "title": "icarus",
+        "image": "/assets/normal-posters/icarus.jpeg"
+      }
+    ]
+  },
+  {
+    "type": "recent",
+    "title": "recent games",
+    "children": [
+      {
+        "id": 11,
+        "title": "jedi: fallen order",
+        "image": "/assets/normal-posters/jedi.jpg"
+      },
+      {
+        "id": 12,
+        "title": "farming simulator",
+        "image": "/assets/normal-posters/farmingsim.jpg"
+      },
+      {
+        "id": 13,
+        "title": "far cry 6",
+        "image": "/assets/normal-posters/farcry.png"
+      },
+      {
+        "id": 14,
+        "title": "alan wake",
+        "image": "/assets/normal-posters/alanwake.jpg"
+      },
+      {
+        "id": 15,
+        "title": "far cry 6",
+        "image": "/assets/normal-posters/farcry.png"
+      },
+      {
+        "id": 16,
+        "title": "icarus",
+        "image": "/assets/normal-posters/icarus.jpeg"
+      },
+          {
+        "id": 17,
+        "title": "alan wake",
+        "image": "/assets/normal-posters/alanwake.jpg"
+      },
+      {
+        "id": 18,
+        "title": "farming simulator",
+        "image": "/assets/normal-posters/farmingsim.jpg"
+      }
+    ]
+  },
+  {
+    "type": "trailers",
+    "title": "trailers",
+    "children": [
+      {
+        "id": 21,
+        "title": "farming simulator",
+        "image": "/assets/normal-posters/farmingsim.jpg"
+      },
+      {
+        "id": 22,
+        "title": "jedi: fallen order",
+        "image": "/assets/normal-posters/jedi.jpg"
+      },
+      {
+        "id": 23,
+        "title": "alan wake",
+        "image": "/assets/normal-posters/alanwake.jpg"
+      },
+      {
+        "id": 24,
+        "title": "icarus",
+        "image": "/assets/normal-posters/icarus.jpeg"
+      },
+      {
+        "id": 25,
+        "title": "farming simulator",
+        "image": "/assets/normal-posters/farmingsim.jpg"
+      },
+      {
+        "id": 26,
+        "title": "alan wake",
+        "image": "/assets/normal-posters/alanwake.jpg"
+      },
+      {
+        "id": 27,
+        "title": "jedi: fallen order",
+        "image": "/assets/normal-posters/jedi.jpg"
+      },
+      {
+        "id": 28,
+        "title": "alan wake",
+        "image": "/assets/normal-posters/alanwake.jpg"
+      }
+    ]
+  }
+]

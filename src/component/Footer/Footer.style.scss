@@ -1,0 +1,12 @@
+.Footer {
+  font-size: 30px;
+  padding: 25px 0;
+  color: var(--primary-light-color);
+  background-color: var(--primary-dark-color);
+
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

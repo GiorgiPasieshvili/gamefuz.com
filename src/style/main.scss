@@ -1,0 +1,42 @@
+@import './reset';
+@import './fonts';
+@import './variables';
+
+:root {
+  --font-default: #{$font-bebas};
+  --font-secondary: #{$font-mkafio};
+  --primary-base-color: #{$default-primary-base-color};
+  --primary-dark-color: #{$default-primary-dark-color};
+  --primary-light-color: #{$default-primary-light-color};
+}
+
+body {
+  font-family: var(--font-default);
+  color: var(--primary-dark-color);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .container {
+    max-width: 1350px;
+    margin: 0 auto;
+  }
+
+  .section {
+    margin-top: 32px;
+  }
+
+  .section:last-child {
+    margin-bottom: 32px;
+  }
+}

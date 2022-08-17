@@ -1,0 +1,15 @@
+.Switcher {
+    width: 52px;
+    height: 52px;
+
+  img {
+    cursor: pointer;
+    opacity: .4;
+    transition: 1s;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(0.7);
+    }
+  }
+}
