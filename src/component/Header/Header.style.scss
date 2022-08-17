@@ -16,5 +16,18 @@
     justify-content: space-between;
     align-items: center;
     gap: .5em;
+
+    & > img {
+      width: 52px;
+      height: 52px;
+
+      cursor: pointer;
+      opacity: .4;
+      transition: .6s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }

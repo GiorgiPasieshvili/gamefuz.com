@@ -6,7 +6,7 @@ import Slider from '@component/Slider';
 /** @namespace @route/Homepage/Component */
 export default function Homepage() {
   return (
-    <main>
+    <>
       <Slider />
       <div className="container">
         <Products type="top" />
@@ -14,7 +14,7 @@ export default function Homepage() {
         <Companies />
         <Products type="trailers" />
       </div>
-    </main>
+    </>
   )
 }
 

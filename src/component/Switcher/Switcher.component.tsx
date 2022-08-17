@@ -5,10 +5,9 @@ import SwitcherIcon from '@style/icons/switcher.svg';
 import './Switcher.style.scss';
 
 /** @namespace @component/Switcher/Component */
-export default function Switcher() {
-
+export default function Switcher({ changeMode }: any) {
   return (
-    <div className="Switcher">
+    <div className="Switcher" onClick={changeMode}>
       <img src={SwitcherIcon} alt="Switcher Icon" />
     </div>
   )

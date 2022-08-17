@@ -5,11 +5,10 @@
   img {
     cursor: pointer;
     opacity: .4;
-    transition: 1s;
+    transition: .6s;
 
     &:hover {
       opacity: 1;
-      transform: scale(0.7);
     }
   }
 }
