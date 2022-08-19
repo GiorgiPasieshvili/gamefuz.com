@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { SwiperSlide } from 'swiper/react';
 import Carousel from '@component/Carousel';
-import companies from './CompaniesData.json';
+import companies from './Companies.data.json';
 import './Companies.style.scss';
 
 /** @namespace @section/Companies/Component */
@@ -11,7 +11,7 @@ export default function Companies() {
     <div className='companies section'>
       <Carousel
         title='companies'
-        height={116}
+        height={120}
         slides={6.5}
       >
         {companies.map(({id, title, image}) => (

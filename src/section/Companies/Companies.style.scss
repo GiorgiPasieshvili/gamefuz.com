@@ -1,8 +1,14 @@
 .companies {
   .carousel-content-item {
-    background: var(--color-backgrounds);
+    border: 2px solid transparent;
+
+    a {
+      background: var(--color-backgrounds);
+    }
 
     &:hover {
+      border-color: var(--color-primary);
+
       img {
         transform: scale(1.2);
       }

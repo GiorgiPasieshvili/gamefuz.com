@@ -5,23 +5,20 @@ import './Header.style.scss';
 import Logo from '@component/Logo';
 import Search from '@component/Search';
 
-import DayIcon from '@style/icons/daymode.svg';
-import NightIcon from '@style/icons/nightmode.svg';
+import { BiSun, BiMoon } from 'react-icons/bi';
 
 /** @namespace @component/Header/Component */
-export default function Header({ isNightMode, setNightMode }: any) {
+export default function Header({ darkTheme, toggleTheme }: any) {
 
   return (
       <header className="header">
         <div className="container">
           <Logo />
-          <div className='header-right'>
+          <div className='header-menu'>
             <Search />
-            <img
-              onClick={() => setNightMode(!isNightMode)}
-              src={isNightMode ? DayIcon : NightIcon}
-              alt="Switcher Icon"
-            />
+            <button className='icon' onClick={toggleTheme}>
+              { darkTheme ? <BiSun /> : <BiMoon /> }
+            </button>
           </div>
         </div>
       </header>

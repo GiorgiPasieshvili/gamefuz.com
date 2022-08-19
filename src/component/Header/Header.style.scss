@@ -11,24 +11,10 @@
     padding: 35px 0;
   }
 
-  &-right {
+  &-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    & > img {
-      width: 52px;
-      height: 52px;
-
-      cursor: pointer;
-      opacity: .4;
-      transition: .6s;
-      transform: scale(.8);
-
-      &:hover {
-        opacity: 1;
-        transform: scale(.7);
-      }
-    }
+    gap: .3em;
   }
 }

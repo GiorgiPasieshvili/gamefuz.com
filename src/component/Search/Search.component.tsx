@@ -1,4 +1,4 @@
-import SearchIcon from '@style/icons/search.svg';
+import { BiSearch } from 'react-icons/bi';
 import './Search.style.scss';
 
 /** @namespace @component/Search/Component */
@@ -7,7 +7,9 @@ export default function Search() {
     <div className="search">
       <div className='search-bar' >
         <input type='text' placeholder='Search..' />
-        <img src={SearchIcon} alt="Search Icon" />
+        <button className='icon'>
+          <BiSearch />
+        </button>
       </div>
       <div className='search-results'></div>
     </div>

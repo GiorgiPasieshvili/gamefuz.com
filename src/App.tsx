@@ -13,12 +13,16 @@ import CategoryPage from '@route/CategoryPage';
 
 // create app component
 export default function App() {
-  const [isNightMode, setNightMode] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(false);
+
+  const toggleTheme = () => {
+    setDarkTheme(darkTheme => !darkTheme);
+  }
 
   return (
     <Router>
-      <div className={`App ${isNightMode ? 'night-mode' : ''}`}>
-        <Header isNightMode={isNightMode} setNightMode={setNightMode} />
+      <div className={`App ${darkTheme ? 'dark-theme' : ''}`}>
+        <Header darkTheme={darkTheme} toggleTheme={toggleTheme} />
         <main>
           <Routes>
             <Route path="/" element={<Homepage />} />

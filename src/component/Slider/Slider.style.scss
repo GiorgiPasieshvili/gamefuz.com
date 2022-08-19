@@ -7,6 +7,7 @@
   .container {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
   }
 
   &-bottom {
@@ -15,21 +16,32 @@
     bottom: 40px;
   }
 
-  &-buttons {
-    width: 100%;
-    position: absolute;
+  &-btns {
+    position: relative;
     top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
 
     button {
-      transform: scale(0.9);
-      opacity: .3;
-      transition: opacity .1s;
+      position: absolute;
+      transform: translateY(-50%);
+      z-index: 1;
+      opacity: .7;
+      transition: .1s;
+
+      svg {
+        color: var(--slider-details-color);
+        font-size: 6em;
+      }
 
       &:hover {
         opacity: 1;
       }
+    }
+
+    .left {
+      left: -25px;
+    }
+    .right {
+      right: -25px;
     }
   }
 
@@ -70,35 +82,34 @@
       width: 60px;
       height: 60px;
       border-radius: 5px;
-      cursor: pointer;
       opacity: var(--slider-counter-opacity);
       border: 2px solid transparent;
       transition: .6s;
+      cursor: pointer;
 
       &:hover {
-        transition: .1s;
         border-color: var(--color-primary);
+        transition: .1s;
         opacity: 1;
       }
     }
 
     .active {
-      opacity: 1;
       border-color: var(--color-primary);
+      opacity: 1;
     }
   }
 
   &-title {
-    div {
+    a {
       display: flex;
       align-items: baseline;
-      gap: .4em;
       display: none;
-      cursor: pointer;
 
       h3 {
         font-size: 45px;
-        color: var(--slider-title-color);
+        color: var(--slider-details-color);
+        margin-right: 6px;
       }
 
       h4 {

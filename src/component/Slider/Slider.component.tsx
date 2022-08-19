@@ -1,10 +1,8 @@
-// import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import SliderData from './SliderData.json';
-
 // import assets and styles
-import LeftIcon from '@style/icons/sli-left.svg';
-import RightIcon from '@style/icons/sli-right.svg';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import SliderData from './Slider.data.json';
 import './Slider.style.scss';
 
 const SLIDER_INTERVAL = 3000;
@@ -42,26 +40,25 @@ export default function Slider() {
     <div className='slider'>
 
       {/* left and right buttons */}
-      <div className='slider-buttons'>
-        <div className="container">
-          <button onClick={prevSlide}>
-            <img src={LeftIcon} alt="Left Icon" />
+      <div className='slider-btns container'>
+          <button className='left' onClick={prevSlide}>
+            <BsChevronCompactLeft />
           </button>
 
-          <button onClick={nextSlide}>
-            <img src={RightIcon} alt="Right Icon" />
+          <button className='right' onClick={nextSlide}>
+            <BsChevronCompactRight />
           </button>
-        </div>
+        
       </div>
 
       {/* long posters */}
       <div className='slider-posters'>
-        {SliderData.map((slide, index) => (
+        {SliderData.map(({poster, title}, index) => (
           <img
             key={index}
-            className={index === current ? 'active' : undefined}
-            src={slide['poster-url']}
-            alt={slide.title}
+            className={index === current ? 'active' : ''}
+            src={poster}
+            alt={title}
           />
         ))}
       </div>
@@ -72,26 +69,27 @@ export default function Slider() {
 
           {/* game title and year */}
           <div className='slider-title'>
-            {SliderData.map((slide, index) => (
-              <div
+            {SliderData.map(({title, year, id}, index) => (
+              <Link
                 key={index}
-                className={index === current ? 'active' : undefined} 
+                to={'product/' + id}
+                className={index === current ? 'active' : ''} 
               >
-                <h3>{slide.title}</h3>
-                <h4>{slide.year}</h4>
-              </div>
+                <h3>{title}</h3>
+                <h4>{year}</h4>
+              </Link>
             ))}
           </div>
 
           {/* counter with mini posters */}
           <div className='slider-counter'>
-            {SliderData.map((slide, index) => (
+            {SliderData.map(({smallPoster, title}, index) => (
               <img
-                onClick={() => slideClick(index)}
                 key={index}
-                className={index === current ? 'active' : undefined}
-                src={slide['mini-poster-url']}
-                alt={slide.title}
+                className={index === current ? 'active' : ''}
+                onClick={() => slideClick(index)}
+                src={smallPoster}
+                alt={title}
               />
             ))}
           </div>

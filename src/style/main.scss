@@ -21,7 +21,7 @@
   --color-backgrounds: var(--color-primary-dark);
   --color-details-disabled: var(--color-primary-light);
 
-  --slider-title-color: white;
+  --slider-details-color: white;
   --slider-bg-opacity: 0;
   --slider-counter-opacity: 1;
 }
@@ -33,7 +33,7 @@ body {
     background: var(--color-body);
   }
 
-  .night-mode {
+  .dark-theme {
     --color-body: var(--color-primary-dark);
     --color-backgrounds: var(--color-primary-darker);
     --color-details: var(--color-primary-lighter);
@@ -54,5 +54,28 @@ body {
 
   .section {
     margin-top: 32px;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    opacity: .6;
+    transition: .4s;
+
+    svg {
+      font-size: 1.7em;
+    }
+
+    &:hover {
+      opacity: 1;
+      transform: scale(.9);
+    }
   }
 }
