@@ -39,10 +39,10 @@ export default function Slider() {
   }
 
   return (
-    <div className='Slider'>
+    <div className='slider'>
 
       {/* left and right buttons */}
-      <div className='Slider-Buttons'>
+      <div className='slider-buttons'>
         <div className="container">
           <button onClick={prevSlide}>
             <img src={LeftIcon} alt="Left Icon" />
@@ -55,7 +55,7 @@ export default function Slider() {
       </div>
 
       {/* long posters */}
-      <div className='Slider-Posters'>
+      <div className='slider-posters'>
         {SliderData.map((slide, index) => (
           <img
             key={index}
@@ -67,11 +67,11 @@ export default function Slider() {
       </div>
 
       {/* bottom section of slider */}
-      <div className="Slider-BottomPart">
+      <div className="slider-bottom">
         <div className="container">
 
           {/* game title and year */}
-          <div className='Slider-Description'>
+          <div className='slider-title'>
             {SliderData.map((slide, index) => (
               <div
                 key={index}
@@ -84,7 +84,7 @@ export default function Slider() {
           </div>
 
           {/* counter with mini posters */}
-          <div className='Slider-Counter'>
+          <div className='slider-counter'>
             {SliderData.map((slide, index) => (
               <img
                 onClick={() => slideClick(index)}

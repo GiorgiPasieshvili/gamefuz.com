@@ -1,13 +1,16 @@
-.Companies {
-  .Carousel {
+.companies {
+  .carousel-content-item {
+    background: var(--color-backgrounds);
 
-    &-Item {
-      background: var(--secondary-background-color);
-
+    &:hover {
       img {
-        width: auto;
-        height: auto;
+        transform: scale(1.2);
       }
+    }
+
+    img {
+      width: auto;
+      height: auto;
     }
   }
 }

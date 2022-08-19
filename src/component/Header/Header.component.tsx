@@ -12,10 +12,10 @@ import NightIcon from '@style/icons/nightmode.svg';
 export default function Header({ isNightMode, setNightMode }: any) {
 
   return (
-      <header className="Header">
+      <header className="header">
         <div className="container">
           <Logo />
-          <div className='Header-Right'>
+          <div className='header-right'>
             <Search />
             <img
               onClick={() => setNightMode(!isNightMode)}

@@ -1,5 +1,5 @@
-.Search {
-  &-Bar {
+.search {
+  &-bar {
     height: 52px;
     position: relative;
 
@@ -21,13 +21,14 @@
 
       position: absolute;
       right: 0;
-      transition: 1s;
+      transition: .6s;
     }
 
     img {
       cursor: pointer;
-      transition: 1s;
+      transition: .6s;
       opacity: .4;
+      transform: scale(.8);
     }
 
     &:hover {
@@ -43,7 +44,7 @@
     }
   }
 
-  // &-Results {
+  // &-results {
     
   // }
 }

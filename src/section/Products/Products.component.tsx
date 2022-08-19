@@ -1,42 +1,29 @@
-import { Link } from 'react-router-dom';
-
 // import assets and styles
-import SectionHeader from '@component/SectionHeader';
-import ProductsData from './ProductsData.json';
+import { Link } from 'react-router-dom';
+import { SwiperSlide } from 'swiper/react';
+import Carousel from '@component/Carousel';
+import products from './ProductsData.json';
 import './Products.style.scss';
-
-// import swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-
 
 /** @namespace @section/Products/Component */
 export default function Products({ type }: { type: string }) {
-  const data = ProductsData.filter((products) => products.type === type);
-  const { title, children } = data[0];
-
+  const { title, content } = products.filter((item) => item.type === type)[0];
+  
   return (
-    <div className='Products section'>
-      {/* section title and buttons */}
-      <SectionHeader title={title} />
-
-      {/* draggable products carousel */}
-      <Swiper
-        className='Carousel'
-        style={{ height: 275 }}
-        spaceBetween={11}
-        slidesPerView={7}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+    <div className='products section'>
+      <Carousel
+        title={title}
+        height={280}
+        slides={7}
       >
-        {children.map(({id, title, image}: any) => (
-          <SwiperSlide className='Carousel-Item' key={id} >
-            <Link to={'products/' + id} >
+        {content.map(({id, title, image}) => (
+          <SwiperSlide className='carousel-content-item' key={id} >
+            <Link to={'product/' + id} >
               <img src={image} alt={title} />
             </Link>
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Carousel>
     </div>
   )
 }

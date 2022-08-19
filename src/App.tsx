@@ -17,12 +17,13 @@ export default function App() {
 
   return (
     <Router>
-      <div className={`App ${isNightMode ? 'night_mode' : ''}`}>
+      <div className={`App ${isNightMode ? 'night-mode' : ''}`}>
         <Header isNightMode={isNightMode} setNightMode={setNightMode} />
         <main>
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="product/:id" element={<ProductPage />} />
+            <Route path="company/:id" element={<ProductPage />} />
             <Route path="category/:id" element={<CategoryPage />} />
           </Routes>
         </main>

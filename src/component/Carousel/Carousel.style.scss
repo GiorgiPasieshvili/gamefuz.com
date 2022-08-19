@@ -1,0 +1,47 @@
+.carousel {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &-title {
+      font-size: 32px;
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      button {
+        color: var(--color-details);
+      }
+
+      .swiper-button-disabled {
+        color: var(--color-details-disabled)
+      }
+
+      svg {
+        font-size: 3em;
+      }
+    }
+  }
+
+  &-content-item {
+    height: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    
+    a {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      transition: .6s;
+    }
+  }
+}

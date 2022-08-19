@@ -1,44 +1,46 @@
 @import './abstract/reset';
 @import './abstract/fonts';
-@import './abstract/variables';
 
 :root {
+  $font-bebas: 'Bebas Neue', sans-serif;
+  $font-familjen: 'Familjen Grotesk', sans-serif;
+  $font-gordeziani: 'GL Gordeziani', sans-serif;
+  $font-mkafio: 'GL Mkafio', sans-serif;
+
   --font-default: #{$font-bebas};
   --font-secondary: #{$font-mkafio};
-  --primary-base-color: #{$default-primary-base-color};
-  --primary-dark-color: #{$default-primary-dark-color};
-  --primary-light-color: #{$default-primary-light-color};
-  --secondary-dark-color: #{$default-secondary-dark-color};
 
-  --primary-background-color: white;
-  --secondary-background-color: var(--primary-dark-color);
-  --primary-text-color: var(--primary-dark-color);
+  --color-primary: #E4AA53;
+  --color-primary-dark: #222222;
+  --color-primary-darker: rgb(29, 29, 29);
+  --color-primary-light: #707070;
+  --color-primary-lighter: #D7D7D7;
+
+  --color-body: white;
+  --color-details: var(--color-primary-dark);
+  --color-backgrounds: var(--color-primary-dark);
+  --color-details-disabled: var(--color-primary-light);
+
+  --slider-title-color: white;
+  --slider-bg-opacity: 0;
+  --slider-counter-opacity: 1;
 }
 
 body {
   .App {
     font-family: var(--font-default);
-    color: var(--primary-text-color);
-    background: var(--primary-background-color);
+    color: var(--color-details);
+    background: var(--color-body);
   }
 
-  .night_mode {
-    --primary-background-color: var(--primary-dark-color);
-    --secondary-background-color: var(--secondary-dark-color);
-    --primary-text-color: var(--primary-light-color);
-  }
-  
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  .night-mode {
+    --color-body: var(--color-primary-dark);
+    --color-backgrounds: var(--color-primary-darker);
+    --color-details: var(--color-primary-lighter);
 
-  button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+    --slider-title-color: var(--color-primary-lighter);
+    --slider-bg-opacity: .4;
+    --slider-counter-opacity: .75;
   }
 
   main {
@@ -52,18 +54,5 @@ body {
 
   .section {
     margin-top: 32px;
-  }
-
-  .swiper-slide {
-    height: 100%;
-    border-radius: 6px;
-    overflow: hidden;
-
-    a {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
 }
