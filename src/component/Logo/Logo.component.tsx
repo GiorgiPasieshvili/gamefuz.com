@@ -5,7 +5,7 @@ export default function Logo() {
   return (
       <div className="logo">
           <Link to="/">
-            <img src='assets/logo.svg' alt="gamefuz" />
+            <img src='/assets/logo.svg' alt="gamefuz" />
           </Link>
       </div>
   )

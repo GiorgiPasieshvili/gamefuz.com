@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 
 // import default styles
 import '@style/main.scss';
@@ -10,19 +9,14 @@ import Footer from '@component/Footer';
 import Homepage from '@route/Homepage';
 import ProductPage from '@route/ProductPage';
 import CategoryPage from '@route/CategoryPage';
+import { useTheme } from "@util/ThemeContext";
 
 // create app component
 export default function App() {
-  const [darkTheme, setDarkTheme] = useState(false);
-
-  const toggleTheme = () => {
-    setDarkTheme(darkTheme => !darkTheme);
-  }
-
   return (
     <Router>
-      <div className={`App ${darkTheme ? 'dark-theme' : ''}`}>
-        <Header darkTheme={darkTheme} toggleTheme={toggleTheme} />
+      <div className={'App ' + useTheme()}>
+        <Header />
         <main>
           <Routes>
             <Route path="/" element={<Homepage />} />
