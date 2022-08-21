@@ -25,7 +25,7 @@
     }
   }
 
-  &-left {
+  &-leftside {
     display: flex;
     flex-direction: column;
     gap: 9px;
@@ -37,7 +37,7 @@
     }
   }
 
-  &-right {
+  &-rightside {
     display: flex;
     justify-content: space-between;
     flex-direction: column;

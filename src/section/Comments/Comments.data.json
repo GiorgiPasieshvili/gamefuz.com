@@ -1,5 +1,26 @@
 [
   {
-    
+    "name": "levan",
+    "surname": "kobiashvili",
+    "pic": "/assets/people/levan.jpg",
+    "comment": "Dzalian kargi tamashia, vertobit mteli ojaxi !!"
+  },
+  {
+    "name": "salome",
+    "surname": "manjgaladze",
+    "pic": "/assets/people/salome.jpg",
+    "comment": "Madloba rom dadet <33 umagresi tamashia !!"
+  },
+  {
+    "name": "nini",
+    "surname": "margoshvili",
+    "pic": "/assets/people/nini.jpg",
+    "comment": "Amis dadebas rame wesieri dagedor! uniwoebi xart !!"
+  },
+    {
+    "name": "maria",
+    "surname": "rojersi",
+    "pic": "/assets/people/maria.jpg",
+    "comment": "momwons aseti stilis tamashebi, ase ganagrdzet <3"
   }
 ]
