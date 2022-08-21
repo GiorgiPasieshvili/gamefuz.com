@@ -1,6 +1,6 @@
 // import assets and styles
 import { AiFillWindows } from 'react-icons/ai';
-import details from './Details.data.json';
+import details from '@data/Details.json';
 import './Details.style.scss';
 
 /** @namespace @component/GameDetails/Component */
@@ -12,7 +12,7 @@ export default function GameDetails() {
 
       <div className='gamedetails-leftside'>
         <img src={image} alt={title} />
-        <a className='btn-primary' href="/product/1">download</a>
+        <a className='primary-button' href="/product/1">Download</a>
       </div>
       
       <div className='gamedetails-rightside'>
@@ -59,13 +59,15 @@ export default function GameDetails() {
         </div>
 
         <section className='gamedetails-specs gamedetails-section'>
+
           <header>
             <h3>system requirements:</h3>
-            <ul>
-              <li><button className='btn-mini'>low</button></li>
-              <li><button className='btn-mini btn-mini-active'>best</button></li>
-            </ul>
+            <div className='mini-buttons'>
+              <button>Low</button>
+              <button className='active'>Best</button>
+            </div>
           </header>
+
           <ul className='gamedetails-specs-list'>
             <li>
               <small>OS: </small>

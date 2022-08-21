@@ -21,6 +21,13 @@ export default function ProductPage() {
 
 
 
+
+
+
+
+
+
+
 // import { useParams } from 'react-router'
 // import { useQuery } from '@apollo/client';
 // import { GET_PRODUCT } from '@query/Product.query';

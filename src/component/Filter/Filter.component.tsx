@@ -68,25 +68,25 @@ export default function Filter() {
 
         <section className='filter-content-section'>
           <h4>Language:</h4>
-          <div className='filter-content-section-btns'>
+          <div className='mini-buttons'>
             <button
               onClick={onBtnClick}
               data-index-number={0}
-              className={`btn-mini ${activeLangButton === 0 ? 'btn-mini-active' : ''}`}
+              className={activeLangButton === 0 ? 'active' : ''}
             >
               Eng
             </button>
             <button
               onClick={onBtnClick}
               data-index-number={1}
-              className={`btn-mini ${activeLangButton === 1 ? 'btn-mini-active' : ''}`}
+              className={activeLangButton === 1 ? 'active' : ''}
             >
               Rus
             </button>
             <button
               onClick={onBtnClick}
               data-index-number={2}
-              className={`btn-mini ${activeLangButton === 2 ? 'btn-mini-active' : ''}`}
+              className={activeLangButton === 2 ? 'active' : ''}
             >
               Multi
             </button>

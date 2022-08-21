@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import SliderData from './Slider.data.json';
+import SliderData from '@data/Slider.json';
 import './Slider.style.scss';
 
 const SLIDER_INTERVAL = 3000;

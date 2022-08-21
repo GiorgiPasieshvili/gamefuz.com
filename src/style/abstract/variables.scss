@@ -1,0 +1,26 @@
+:root {
+  $font-bebas: 'Bebas Neue', sans-serif;
+  $font-familjen: 'Familjen Grotesk', sans-serif;
+  $font-gordeziani: 'GL Gordeziani', sans-serif;
+  $font-mkafio: 'GL Mkafio', sans-serif;
+
+  --font-default: #{$font-bebas};
+  --font-secondary: #{$font-mkafio};
+  --font-details: #{$font-familjen};
+
+  --color-primary: #E4AA53;
+  --color-primary-dark: #222222;
+  --color-primary-darker: rgb(29, 29, 29);
+  --color-primary-light: #707070;
+  --color-primary-lighter: #D7D7D7;
+  --color-secondary-dark: #353535;
+
+  --color-body: white;
+  --color-details: var(--color-primary-dark);
+  --color-backgrounds: var(--color-primary-dark);
+  --color-details-disabled: var(--color-primary-light);
+
+  --slider-details-color: white;
+  --slider-bg-opacity: 0;
+  --slider-counter-opacity: 1;
+}

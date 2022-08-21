@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { SwiperSlide } from 'swiper/react';
 import Carousel from '@component/Carousel';
-import companies from './Companies.data.json';
+import companies from '@data/Companies.json';
 import './Companies.style.scss';
 
 /** @namespace @component/Companies/Component */

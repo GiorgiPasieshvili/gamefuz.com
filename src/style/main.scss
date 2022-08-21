@@ -1,31 +1,6 @@
 @import './abstract/reset';
 @import './abstract/fonts';
-
-:root {
-  $font-bebas: 'Bebas Neue', sans-serif;
-  $font-familjen: 'Familjen Grotesk', sans-serif;
-  $font-gordeziani: 'GL Gordeziani', sans-serif;
-  $font-mkafio: 'GL Mkafio', sans-serif;
-
-  --font-default: #{$font-bebas};
-  --font-secondary: #{$font-mkafio};
-  --font-details: #{$font-familjen};
-
-  --color-primary: #E4AA53;
-  --color-primary-dark: #222222;
-  --color-primary-darker: rgb(29, 29, 29);
-  --color-primary-light: #707070;
-  --color-primary-lighter: #D7D7D7;
-
-  --color-body: white;
-  --color-details: var(--color-primary-dark);
-  --color-backgrounds: var(--color-primary-dark);
-  --color-details-disabled: var(--color-primary-light);
-
-  --slider-details-color: white;
-  --slider-bg-opacity: 0;
-  --slider-counter-opacity: 1;
-}
+@import './abstract/variables';
 
 body {
   .App {
@@ -66,33 +41,33 @@ body {
   }
 
   .icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: var(--color-primary);
     color: white;
+    background: var(--color-primary);
     opacity: .6;
     transition: .4s;
 
     svg {
-      font-size: 1.7em;
+      font-size: 22px;
     }
-
+    
     &:hover {
       opacity: 1;
       transform: scale(.9);
     }
   }
 
-  .btn-primary {
-    font-family: var(--font-details);
-    text-transform: capitalize;
-    font-size: 23px;
+  .primary-button {
+    font: 23px var(--font-details);
     height: 50px;
+    border-radius: 6px;
 
     display: flex;
     justify-content: center;
@@ -100,7 +75,6 @@ body {
 
     color: white;
     background: var(--color-primary);
-    border-radius: 6px;
     opacity: .9;
     transition: .2s;
 
@@ -109,22 +83,25 @@ body {
     }
   }
 
-  .btn-mini {
-    font-family: var(--font-details);
-    font-size: 17px;
-    text-transform: capitalize;
-    
-    width: 55px;
-    height: 25px;
-    border-radius: 6px;
-    
+  .mini-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 8px;
 
-    color: var(--color-primary-lighter);
-    background: #353535;
+    button {
+      font: 17px var(--font-details);
+      width: 55px;
+      height: 25px;
+      border-radius: 6px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    &-active {
+      color: var(--color-primary-lighter);
+      background: var(--color-secondary-dark);
+    }
+    .active {
       color: white;
       background: var(--color-primary);
     }
