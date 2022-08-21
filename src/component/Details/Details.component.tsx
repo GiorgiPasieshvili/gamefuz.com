@@ -1,7 +1,7 @@
 // import assets and styles
 import { AiFillWindows } from 'react-icons/ai';
-import details from './GameDetails.data.json';
-import './GameDetails.style.scss';
+import details from './Details.data.json';
+import './Details.style.scss';
 
 /** @namespace @component/GameDetails/Component */
 export default function GameDetails() {

@@ -1,5 +1,5 @@
 import Slider from '@component/Slider';
-import GameDetails from '@component/GameDetails';
+import Details from '@component/Details';
 import Products from '@component/Products';
 import Comments from '@component/Comments';
 
@@ -9,7 +9,7 @@ export default function ProductPage() {
     <>
       <Slider />
       <div className='container' >
-        <GameDetails />
+        <Details />
         <Products type="similar" />
         <Comments />
       </div>
