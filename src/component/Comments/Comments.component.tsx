@@ -2,7 +2,7 @@
 import comments from './Comments.data.json';
 import './Comments.style.scss';
 
-/** @namespace @section/Comments/Component */
+/** @namespace @component/Comments/Component */
 export default function Comments() {
   return (
     <section className='comments section'>

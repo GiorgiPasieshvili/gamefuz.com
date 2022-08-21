@@ -5,7 +5,7 @@ import Carousel from '@component/Carousel';
 import companies from './Companies.data.json';
 import './Companies.style.scss';
 
-/** @namespace @section/Companies/Component */
+/** @namespace @component/Companies/Component */
 export default function Companies() {
   return (
     <section className='companies section'>

@@ -1,17 +1,17 @@
+/* utilities import */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useTheme } from "@util/ThemeContext";
 
-// import default styles
+/* default styles import */
 import '@style/main.scss';
 
-// page & layout imports
+/* page & layout imports */
 import Header from '@component/Header';
 import Footer from '@component/Footer';
 import Homepage from '@route/Homepage';
 import ProductPage from '@route/ProductPage';
-import CategoryPage from '@route/CategoryPage';
-import { useTheme } from "@util/ThemeContext";
+import FilterPage from '@route/FilterPage';
 
-// create app component
 export default function App() {
   return (
     <Router>
@@ -21,8 +21,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="product/:id" element={<ProductPage />} />
-            <Route path="company/:id" element={<ProductPage />} />
-            <Route path="category/:id" element={<CategoryPage />} />
+            <Route path="filter/:id" element={<FilterPage />} />
           </Routes>
         </main>
         <Footer />

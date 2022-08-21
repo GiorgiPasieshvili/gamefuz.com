@@ -1,7 +1,7 @@
 import Slider from '@component/Slider';
-import GameDetails from '@section/GameDetails';
-import Products from '@section/Products';
-import Comments from '@section/Comments';
+import GameDetails from '@component/GameDetails';
+import Products from '@component/Products';
+import Comments from '@component/Comments';
 
 /** @namespace @route/ProductPage/Component */
 export default function ProductPage() {

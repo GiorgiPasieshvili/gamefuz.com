@@ -3,7 +3,7 @@ import { AiFillWindows } from 'react-icons/ai';
 import details from './GameDetails.data.json';
 import './GameDetails.style.scss';
 
-/** @namespace @section/GameDetails/Component */
+/** @namespace @component/GameDetails/Component */
 export default function GameDetails() {
   const { title, image, year, categories, company, interface_lang, dubbing_lang, crack, description, specs } = details[0];
 

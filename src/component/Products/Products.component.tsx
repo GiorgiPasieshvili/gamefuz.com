@@ -5,7 +5,7 @@ import Carousel from '@component/Carousel';
 import products from './Products.data.json';
 import './Products.style.scss';
 
-/** @namespace @section/Products/Component */
+/** @namespace @component/Products/Component */
 export default function Products({ type }: { type: string }) {
   const { title, content } = products.filter((item) => item.type === type)[0];
   
