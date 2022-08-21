@@ -1,15 +1,14 @@
-.gamedetails {
+.details {
   display: flex;
-  justify-content: space-between;
   gap: 28px;
 
+  /* default styles for any section */
   &-section {
     font-family: var(--font-details);
     margin-bottom: 19px;
 
     h3 {
-      font-family: var(--font-default);
-      font-size: 25px;
+      font: 25px var(--font-default);
     }
 
     p {
@@ -25,7 +24,8 @@
     }
   }
 
-  &-leftside {
+  /* left side - image and download */
+  &-left {
     display: flex;
     flex-direction: column;
     gap: 9px;
@@ -37,7 +37,8 @@
     }
   }
 
-  &-rightside {
+  /* right side divided by 2 parts - title, info, desc & specs */
+  &-right {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -45,7 +46,8 @@
     position: relative;
   }
 
-  &-name {
+  /* section of right side - game title */
+  &-title {
     display: flex;
     align-items: baseline;
     gap: 6px;
@@ -61,14 +63,11 @@
     }
   }
 
+  /* section of right side - game information */
   &-info {
     text-transform: capitalize;
 
-    &-crack {
-      text-transform: none;
-    }
-
-    &-genre {
+    li:first-child {
       span {
         &:last-child {
           &::after {
@@ -82,7 +81,8 @@
       }
     }
 
-    &-lang {
+    li:nth-child(3),
+    li:nth-child(4) {
       span {
         text-transform: uppercase;
 
@@ -97,13 +97,19 @@
         }
       }
     }
+
+    li:last-child {
+      text-transform: none;
+    }
   }
 
+  /* bottom part of right side - system specs */
   &-specs {
     padding: 20px;
     border-radius: 6px;
-    background: var(--color-backgrounds);
+    
     color: white;
+    background: var(--color-backgrounds);
     margin-bottom: 0;
 
     header {
@@ -111,29 +117,36 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 2px;
-
-      ul {
-        display: flex;
-        gap: 6px;
-      }
     }
 
-    &-list {
-      display: flex;
+    ul {
+      height: 70px;
+      display: none;
+
       justify-content: space-between;
       flex-direction: column;
       flex-wrap: wrap;
-      height: 70px;
+
+      li {
+        width: 50%;
+        white-space: nowrap;
+      }
 
       small {
         color: var(--color-primary);
       }
     }
+
+    .active {
+      display: flex;
+    }
   }
 
   &-icon {
-    font-size: 6em;
     position: absolute;
     right: 0;
+    svg {
+      font-size: 96px;
+    }
   }
 }

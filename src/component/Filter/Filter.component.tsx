@@ -3,7 +3,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 
 import { AiOutlineMenuUnfold , AiOutlineClose} from 'react-icons/ai';
-import { BsChevronDown } from 'react-icons/bs';
+// import { BsChevronDown } from 'react-icons/bs';
 import './Filter.style.scss';
 
 const animatedComponents = makeAnimated();

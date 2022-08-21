@@ -24,8 +24,8 @@ export default function Comments() {
           </div>
         </div>
         <ul className='comments-content'>
-          {comments.map(({ name, surname, pic, comment }) => (
-            <li>
+          {comments.map(({ name, surname, pic, comment }, index) => (
+            <li key={index}>
               <img
                 className='comments-picture'
                 src={pic}
