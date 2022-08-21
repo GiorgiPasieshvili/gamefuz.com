@@ -72,7 +72,7 @@ export default function Slider() {
             {SliderData.map(({title, year, id}, index) => (
               <Link
                 key={index}
-                to={'product/' + id}
+                to={'/product/' + id}
                 className={index === current ? 'active' : ''} 
               >
                 <h3>{title}</h3>

@@ -1,0 +1,139 @@
+.gamedetails {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+
+  &-section {
+    font-family: var(--font-details);
+    margin-bottom: 19px;
+
+    h3 {
+      font-family: var(--font-default);
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    small {
+      font-size: 20px;
+    }
+
+    span {
+      font-size: 18px;
+    }
+  }
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    
+    img {
+      width: 285px;
+      height: 415px;
+      border-radius: 6px;
+    }
+  }
+
+  &-right {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+  }
+
+  &-name {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 10px;
+    
+    h2 {
+      font-size: 40px;
+    }
+
+    small {
+      font-size: 27px;
+      color: var(--color-primary);
+    }
+  }
+
+  &-info {
+    text-transform: capitalize;
+
+    &-crack {
+      text-transform: none;
+    }
+
+    &-genre {
+      span {
+        &:last-child {
+          &::after {
+            content: '';
+          }
+        }
+
+        &::after {
+          content: ',';
+        }
+      }
+    }
+
+    &-lang {
+      span {
+        text-transform: uppercase;
+
+        &:last-child {
+          &::after {
+            content: '';
+          }
+        }
+
+        &::after {
+          content: ' | ';
+        }
+      }
+    }
+  }
+
+  &-specs {
+    padding: 20px;
+    border-radius: 6px;
+    background: var(--color-backgrounds);
+    color: white;
+    margin-bottom: 0;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
+
+      ul {
+        display: flex;
+        gap: 6px;
+      }
+    }
+
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 70px;
+
+      small {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &-icon {
+    font-size: 6em;
+    position: absolute;
+    right: 0;
+  }
+}

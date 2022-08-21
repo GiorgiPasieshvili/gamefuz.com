@@ -17,7 +17,7 @@ export default function App() {
     <Router>
       <div className={'App ' + useTheme()}>
         <Header />
-        <main>
+        <main className="main">
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="product/:id" element={<ProductPage />} />

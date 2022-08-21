@@ -8,7 +8,7 @@ import './Companies.style.scss';
 /** @namespace @section/Companies/Component */
 export default function Companies() {
   return (
-    <div className='companies section'>
+    <section className='companies section'>
       <Carousel
         title='companies'
         height={120}
@@ -16,12 +16,12 @@ export default function Companies() {
       >
         {companies.map(({id, title, image}) => (
           <SwiperSlide className='carousel-content-item' key={id} >
-            <Link to={'company/' + id} >
+            <Link to={'/company/' + id} >
               <img src={image} alt={title} />
             </Link>
           </SwiperSlide>
         ))}
       </Carousel>
-    </div>
+    </section>
   )
 }

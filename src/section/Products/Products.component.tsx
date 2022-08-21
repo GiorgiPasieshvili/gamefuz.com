@@ -10,7 +10,7 @@ export default function Products({ type }: { type: string }) {
   const { title, content } = products.filter((item) => item.type === type)[0];
   
   return (
-    <div className='products section'>
+    <section className='products section'>
       <Carousel
         title={title}
         height={280}
@@ -18,12 +18,12 @@ export default function Products({ type }: { type: string }) {
       >
         {content.map(({id, title, image}) => (
           <SwiperSlide className='carousel-content-item' key={id} >
-            <Link to={'product/' + id} >
+            <Link to={'/product/' + id} >
               <img src={image} alt={title} />
             </Link>
           </SwiperSlide>
         ))}
       </Carousel>
-    </div>
+    </section>
   )
 }

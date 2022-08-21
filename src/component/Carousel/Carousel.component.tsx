@@ -17,8 +17,8 @@ export default function Carousel({ title, height, slides, children }: any) {
     <div className='carousel'>
 
       {/* section title and buttons */}
-      <header className='carousel-header'>
-        <h2 className='carousel-header-title'>{title}</h2>
+      <header className='carousel-header section-header'>
+        <h2 className='section-header-title'>{title}</h2>
 
         {/* left and right buttons */}
         <div className='carousel-header-buttons'>

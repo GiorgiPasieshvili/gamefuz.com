@@ -141,5 +141,51 @@
         "image": "/assets/normal-posters/alanwake.jpg"
       }
     ]
+  },
+  {
+    "type": "similar",
+    "title": "similar",
+    "content": [
+      {
+        "id": 31,
+        "title": "farming simulator",
+        "image": "/assets/normal-posters/farmingsim.jpg"
+      },
+      {
+        "id": 32,
+        "title": "jedi: fallen order",
+        "image": "/assets/normal-posters/jedi.jpg"
+      },
+      {
+        "id": 33,
+        "title": "alan wake",
+        "image": "/assets/normal-posters/alanwake.jpg"
+      },
+      {
+        "id": 34,
+        "title": "icarus",
+        "image": "/assets/normal-posters/icarus.jpeg"
+      },
+      {
+        "id": 35,
+        "title": "farming simulator",
+        "image": "/assets/normal-posters/farmingsim.jpg"
+      },
+      {
+        "id": 36,
+        "title": "alan wake",
+        "image": "/assets/normal-posters/alanwake.jpg"
+      },
+      {
+        "id": 37,
+        "title": "jedi: fallen order",
+        "image": "/assets/normal-posters/jedi.jpg"
+      },
+      {
+        "id": 38,
+        "title": "alan wake",
+        "image": "/assets/normal-posters/alanwake.jpg"
+      }
+    ]
   }
 ]

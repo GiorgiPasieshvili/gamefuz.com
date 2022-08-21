@@ -1,10 +1,33 @@
+import Slider from '@component/Slider';
+import GameDetails from '@section/GameDetails';
+import Products from '@section/Products';
+import Comments from '@section/Comments';
+
+/** @namespace @route/ProductPage/Component */
+export default function ProductPage() {
+  return (
+    <>
+      <Slider />
+      <div className='container' >
+        <GameDetails />
+        <Products type="similar" />
+        <Comments />
+      </div>
+    </>
+
+  );
+}
+
+
+
+
 // import { useParams } from 'react-router'
 // import { useQuery } from '@apollo/client';
 // import { GET_PRODUCT } from '@query/Product.query';
 // import Categories from '@component/Categories';
 
-/** @namespace @route/ProductPage/Component */
-export default function ProductPage() {
+
+
   // const { id } = useParams()
   // const { loading, error, data } = useQuery(GET_PRODUCT, {
   //   variables: { id },
@@ -15,26 +38,3 @@ export default function ProductPage() {
 
   // const { product: { data: { attributes } } } = data;
   // const { title, description, release, categories: { data: categories } } = attributes;
-  let title, release, description;
-
-  return (
-    <div className='container'  style={{ margin: '8em auto', display: 'flex', gap: '1em' }}>
-      <img style={{ width: 300 }} src='/assets/normal-posters/alanwake.jpg' alt='alan wake' />
-      <div style={{ fontSize: '32px' }}>
-
-        <h3>title:</h3>
-        <h4>{title || 'Alan Wake'}</h4>
-
-        <h3>release:</h3>
-        <h4>{release || '2-12'}</h4>
-
-        <h3>description:</h3>
-        <p>{description || 'This game is awesome. play now!'}</p>
-
-        <h3>genre:</h3>
-        {/* <Categories categories={categories} /> */}
-
-      </div>
-    </div>
-  );
-}
