@@ -1,11 +1,12 @@
-// import assets and styles
-import { useState, useEffect } from 'react';
+/* utilities import */
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+/* assets & styles import */
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import SliderData from '@data/Slider.json';
 import './Slider.style.scss';
-
-const SLIDER_INTERVAL = 3000;
+import data from '@data/Slider.json';
+/* import constant values */
+import { SLIDER_INTERVAL } from './Slider.config';
 
 /** @namespace @component/Slider/Component */
 export default function Slider() {
@@ -13,14 +14,14 @@ export default function Slider() {
 
   // make slide transitions automatic
   useEffect(() => {
-    const isLastSlide = current === SliderData.length - 1;
+    const isLastSlide = current === data.length - 1;
     const interval = setInterval(() => setCurrent(current => isLastSlide ? 0 : current + 1), SLIDER_INTERVAL);
     return () => clearInterval(interval);
   }, [current]);
 
   // go to the next slide
   const nextSlide = () => {
-    const isLastSlide = current === SliderData.length - 1;
+    const isLastSlide = current === data.length - 1;
     const newIndex = isLastSlide ? 0 : current + 1;
     setCurrent(newIndex);
   }
@@ -40,7 +41,8 @@ export default function Slider() {
     <div className='slider'>
 
       {/* left and right buttons */}
-      <div className='slider-btns container'>
+      <div className='slider-buttons'>
+        <div className='container'>
           <button className='left' onClick={prevSlide}>
             <BsChevronCompactLeft />
           </button>
@@ -48,12 +50,12 @@ export default function Slider() {
           <button className='right' onClick={nextSlide}>
             <BsChevronCompactRight />
           </button>
-        
+        </div>
       </div>
 
       {/* long posters */}
       <div className='slider-posters'>
-        {SliderData.map(({poster, title}, index) => (
+        {data.map(({poster, title}, index) => (
           <img
             key={index}
             className={index === current ? 'active' : ''}
@@ -69,7 +71,7 @@ export default function Slider() {
 
           {/* game title and year */}
           <div className='slider-title'>
-            {SliderData.map(({title, year, id}, index) => (
+            {data.map(({title, year, id}, index) => (
               <Link
                 key={index}
                 to={'/product/' + id}
@@ -83,7 +85,7 @@ export default function Slider() {
 
           {/* counter with mini posters */}
           <div className='slider-counter'>
-            {SliderData.map(({smallPoster, title}, index) => (
+            {data.map(({smallPoster, title}, index) => (
               <img
                 key={index}
                 className={index === current ? 'active' : ''}

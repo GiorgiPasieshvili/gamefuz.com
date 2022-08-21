@@ -1,4 +1,4 @@
-// import assets and styles
+/* import assets & styles */
 import { AiFillAndroid } from 'react-icons/ai';
 import './Switcher.style.scss';
 

@@ -1,3 +1,4 @@
+/* import assets & styles */
 import { BiSearch } from 'react-icons/bi';
 import './Search.style.scss';
 

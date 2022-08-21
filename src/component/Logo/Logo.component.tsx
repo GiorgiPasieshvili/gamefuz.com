@@ -1,3 +1,4 @@
+/* utilities import */
 import { Link } from 'react-router-dom';
 
 /** @namespace @component/Logo/Component */

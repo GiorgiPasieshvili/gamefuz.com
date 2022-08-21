@@ -1,8 +1,7 @@
-// import assets & styles
+/* import assets & styles */
 import Logo from '@component/Logo';
 import Search from '@component/Search';
-import { BiSun, BiMoon } from 'react-icons/bi';
-import { useTheme, useThemeUpdate } from "@util/ThemeContext";
+import SwitherTheme from '@component/SwitcherTheme';
 import './Header.style.scss';
 
 /** @namespace @component/Header/Component */
@@ -13,9 +12,7 @@ export default function Header() {
           <Logo />
           <div className='header-menu'>
             <Search />
-            <button className='icon' onClick={useThemeUpdate()}>
-              { useTheme() === 'dark' ? <BiSun /> : <BiMoon /> }
-            </button>
+            <SwitherTheme />
           </div>
         </div>
       </header>

@@ -1,6 +1,7 @@
-// import assets and styles
+/* utilities import */
 import { Link } from 'react-router-dom';
 import { SwiperSlide } from 'swiper/react';
+/* assets & styles import */
 import Carousel from '@component/Carousel';
 import products from '@data/Products.json';
 import './Products.style.scss';
@@ -17,7 +18,7 @@ export default function Products({ type }: { type: string }) {
         slides={7}
       >
         {content.map(({id, title, image}) => (
-          <SwiperSlide className='carousel-content-item' key={id} >
+          <SwiperSlide className='products-item carousel-content-item' key={id} >
             <Link to={'/product/' + id} >
               <img src={image} alt={title} />
             </Link>

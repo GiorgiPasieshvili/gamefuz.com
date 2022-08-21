@@ -1,11 +1,11 @@
+/* utilities import */
 import { useState } from 'react';
-import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
-
-// import swiper
+/* swiper module import */
 import { Swiper } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper';
+import { Navigation } from 'swiper';
 import 'swiper/css';
-
+/* import assets & styles */
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import './Carousel.style.scss';
 
 /** @namespace @section/Products/Component */
@@ -33,7 +33,7 @@ export default function Carousel({ title, height, slides, children }: any) {
 
       {/* draggable products carousel */}
       <Swiper
-        modules={[Navigation, Autoplay]}
+        modules={[Navigation]}
         navigation={{
           prevEl: prevRef,
           nextEl: nextRef,
@@ -45,12 +45,6 @@ export default function Carousel({ title, height, slides, children }: any) {
         spaceBetween={6}
         slidesPerView={slides}
         slidesPerGroup={slides}
-        
-        // loop
-        // autoplay={{
-        //   delay: 500,
-        //   disableOnInteraction: false,
-        // }}
       >
         {children}
       </Swiper>

@@ -1,3 +1,4 @@
+/* styles import */
 import './Footer.style.scss';
 
 /** @namespace @component/Footer/Component */
