@@ -1,4 +1,5 @@
-import Slider from '@component/Slider';
+// import Slider from '@component/Slider';
+import SliderInGame from '@component/SliderInGame';
 import Details from '@component/Details';
 import Products from '@component/Products';
 import Comments from '@component/Comments';
@@ -7,7 +8,7 @@ import Comments from '@component/Comments';
 export default function ProductPage() {
   return (
     <>
-      <Slider />
+      <SliderInGame />
       <div className='container' >
         <Details />
         <Products type="similar" />

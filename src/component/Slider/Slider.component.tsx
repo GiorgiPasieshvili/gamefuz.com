@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 /* assets & styles import */
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import './Slider.style.scss';
-import data from '@data/Slider.json';
+import data from '@data/HomeSlider.json';
 /* import constant values */
 import { SLIDER_INTERVAL } from './Slider.config';
 

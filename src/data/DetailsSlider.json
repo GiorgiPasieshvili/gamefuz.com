@@ -1,0 +1,23 @@
+[
+  {
+    "video": "https://www.youtube.com/watch?v=8a-EObAhYrg",
+    "images": [
+      {
+        "id": 1,
+        "poster": "/assets/ingame-posters/first.jpg"
+      },
+      {
+        "id": 2,
+        "poster": "/assets/ingame-posters/second.jpg"
+      },
+      {
+        "id": 3,
+        "poster": "/assets/ingame-posters/third.jpg"
+      },
+      {
+        "id": 4,
+        "poster": "/assets/ingame-posters/fourth.jpg"
+      }
+    ]
+  }
+]
