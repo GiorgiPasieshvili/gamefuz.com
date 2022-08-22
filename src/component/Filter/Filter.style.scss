@@ -17,7 +17,7 @@
     z-index: 10;
 
     svg {
-      font-size: 3em;
+      font-size: 40px;
     }
 
     &:hover {
@@ -28,77 +28,66 @@
 
   &-content {
     width: 340px;
+    min-height: 470px;
     height: 80vh;
-    padding: 25px;
+    padding: 25px 25px 50px 25px;
     border-radius: 0 6px 6px 0;
     background: var(--color-backgrounds);
 
     position: fixed;
     top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    transition: .4s;
     left: -340px;
+    z-index: 10;
+    transform: translateY(-50%);
+    transition: .4s;
 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
 
-    &-header {
+    &-top {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      gap: 20px;
 
-      img {
-        width: 150px;
-        height: 30px;
-      }
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-      .icon {
-        width: 34px;
-        height: 34px;
+        img {
+          width: 150px;
+          height: 30px;
+        }
+
+        .icon {
+          width: 34px;
+          height: 34px;
+        }
       }
     }
 
     &-section {
-      h4 {
-        color: white;
-        font-size: 25px;
-        margin-bottom: 16px;
-      }
-
-      &-btns {
+      header {
         display: flex;
-        gap: 8px;
-
-        .btn-mini {
-          font-family: var(--font-details);
-          font-size: 21px;
-          width: 72px;
-          height: 52px;
-          align-items: center;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        h4, small {
+          color: var(--color-details-dark-bg);
+          font-size: 22px;
         }
       }
-
-      &-range {
-        width: 100%;
-      }
     }
 
-    &-submit {
-      font-size: 25px;
-      width: 100%;
+    &-select {
+      text-transform: capitalize;
+    }
+
+    &-button {
+      font-size: 22px;
       height: 52px;
-      border-radius: 6px;
-      color: white;
-      background: var(--color-primary);
-      opacity: .9;
-
-      &:hover {
-        opacity: 1;
-      }
     }
-
   }
 
   &-active {

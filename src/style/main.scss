@@ -1,6 +1,7 @@
 @import './abstract/reset';
 @import './abstract/fonts';
 @import './abstract/variables';
+@import './abstract/inputs';
 
 body {
   .App {
@@ -13,10 +14,13 @@ body {
     --color-body: var(--color-primary-dark);
     --color-backgrounds: var(--color-primary-darker);
     --color-details: var(--color-primary-lighter);
-
-    --slider-details-color: var(--color-primary-lighter);
+    --color-details-dark-bg: var(--color-primary-lighter);
+    
     --slider-poster-opacity: .4;
     --slider-counter-opacity: .75;
+
+    --textarea-border-color: var(--color-primary-light);
+    --textarea-down-bg-color: var(--color-secondary-darker);
   }
 
   .main {
@@ -65,16 +69,13 @@ body {
   }
 
   .primary-button {
-    font: 23px var(--font-details);
-    height: 50px;
-    border-radius: 6px;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
     color: white;
     background: var(--color-primary);
+    border-radius: 6px;
     opacity: .9;
     transition: .2s;
 

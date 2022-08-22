@@ -14,13 +14,17 @@
   --color-primary-light: #707070;
   --color-primary-lighter: #D7D7D7;
   --color-secondary-dark: #353535;
+  --color-secondary-darker: #282828;
 
   --color-body: white;
   --color-details: var(--color-primary-dark);
   --color-backgrounds: var(--color-primary-dark);
   --color-details-disabled: var(--color-primary-light);
+  --color-details-dark-bg: white;
 
-  --slider-details-color: white;
   --slider-poster-opacity: 0;
   --slider-counter-opacity: 1;
+
+  --textarea-border-color: #D8D8D8;
+  --textarea-down-bg-color: #FDFBEC;
 }

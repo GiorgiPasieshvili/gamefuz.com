@@ -35,6 +35,11 @@
       height: 415px;
       border-radius: 6px;
     }
+
+    a {
+      font: 23px var(--font-details);
+      height: 50px;
+    }
   }
 
   /* right side divided by 2 parts - title, info, desc & specs */
@@ -108,7 +113,7 @@
     padding: 20px;
     border-radius: 6px;
     
-    color: white;
+    color: var(--color-details-dark-bg);
     background: var(--color-backgrounds);
     margin-bottom: 0;
 

@@ -1,4 +1,4 @@
-// import assets and styles
+/* import assets and styles */
 import comments from '@data/Comments.json';
 import './Comments.style.scss';
 
@@ -6,31 +6,38 @@ import './Comments.style.scss';
 export default function Comments() {
   return (
     <section className='comments section'>
+      {/* header of the section */}
       <header className='section-header'>
         <h2 className='section-header-title'>comments</h2>
       </header>
+
       <main>
-        <div className='comments-submission'>
+        {/* comment addition part */}
+        <div className='comments-addition'>
           <img
-            className='comments-picture'
+            className='comments-pic'
             src="/assets/people/user.jpg"
             alt="profile pic" 
           />
-          <div className='comments-submission-textarea'>
+          <div className='comments-addition-box'>
             <textarea  placeholder="Add Comment..."></textarea>
-            <div className='comments-submission-textarea-submitpart'>
-              <button>Log in to post</button>
+            <div className='comments-addition-box-down'>
+              <button className='primary-button'>Log in to post</button>
             </div>
           </div>
         </div>
+
+        {/* all comment messages renders here */}
         <ul className='comments-content'>
           {comments.map(({ name, surname, pic, comment }, index) => (
             <li key={index}>
+              {/* profile picture of user */}
               <img
-                className='comments-picture'
+                className='comments-pic'
                 src={pic}
                 alt={name}
               />
+              {/* name and comment of user */}
               <div>
                 <h3>{name} <span>{surname}</span></h3>
                 <p>{comment}</p>
@@ -38,9 +45,12 @@ export default function Comments() {
             </li>
           ))}
         </ul>
-        <button className='comments-loadmore'>
-          Load 10 more comments
+
+        {/* load more button */}
+        <button className='comments-load primary-button'>
+          Load 4 more comments
         </button>
+
       </main>
     </section>
   )

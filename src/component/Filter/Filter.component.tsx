@@ -1,99 +1,110 @@
+/* utilities import */
 import { useState } from 'react';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-
+/* assets & style import */
 import { AiOutlineMenuUnfold , AiOutlineClose} from 'react-icons/ai';
 // import { BsChevronDown } from 'react-icons/bs';
 import './Filter.style.scss';
-
+import options from '@data/Options.json';
+import { selectStyles } from './Filter.config';
 const animatedComponents = makeAnimated();
-
-const options = [
-  { value: 'Arcade', label: 'arcade' },
-  { value: 'Action', label: 'action' },
-  { value: 'Adventure', label: 'adventure' },
-];
 
 /** @namespace @component/Filter/Component */
 export default function Filter() {
-  const [isFilterActive, setFilterActive] = useState(false);
+  const [isFilterOpen, setFilterOpen] = useState(false);
+  const [selectedGenre, setSelectedGenre] = useState<any>(null);
   const [activeLangButton, setActiveLangButton] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
 
-  const toggleActive = () => {
-    setFilterActive(isFilterActive => !isFilterActive);
+  const toggleFilter = () => {
+    setFilterOpen(isFilterOpen => !isFilterOpen);
   }
 
-  const onSelect = (selectedOption: any) => {
-    setSelectedOption(selectedOption)
-  }
-
-  const onBtnClick = (e: any) => {
+  const onLangButtonClick = (e: any) => {
     const btnIndex = e.target.dataset.indexNumber;
     setActiveLangButton(Number(btnIndex));
   }
 
   return (
-    <div className={`filter ${isFilterActive ? 'filter-active' : ''}`}>
+    <div className={isFilterOpen ? 'filter filter-active' : 'filter'}>
+
+      {/* filter open/close button */}
       <button
         className='filter-toggle'
-        onClick={toggleActive}
+        onClick={toggleFilter}
         >
         <AiOutlineMenuUnfold />
       </button>
+
+      {/* filter options - genre, year, lang */}
       <div className='filter-content'>
-        <header className='filter-content-header'>
-          <img src="/assets/logo.svg" alt="gamefuz" />
-          <button onClick={toggleActive} className='icon'>
-            <AiOutlineClose />
-          </button>
-        </header>
-
-        <section className='filter-content-section'>
-          <h4>Genre:</h4>
-          <Select
-            closeMenuOnSelect={false}
-            components={animatedComponents}
-            value={selectedOption}
-            onChange={onSelect}
-            options={options}
-            isMulti
-          />
-        </section>
-    
-        <section className='filter-content-section'>
-          <h4>Year:</h4>
-          <input className='filter-content-section-range' type="range" />
-        </section>
-
-        <section className='filter-content-section'>
-          <h4>Language:</h4>
-          <div className='mini-buttons'>
-            <button
-              onClick={onBtnClick}
-              data-index-number={0}
-              className={activeLangButton === 0 ? 'active' : ''}
-            >
-              Eng
+        <div className='filter-content-top'>
+          <header className='filter-content-top-header'>
+            <img src="/assets/logo.svg" alt="gamefuz" />
+            <button onClick={toggleFilter} className='icon'>
+              <AiOutlineClose />
             </button>
-            <button
-              onClick={onBtnClick}
-              data-index-number={1}
-              className={activeLangButton === 1 ? 'active' : ''}
-            >
-              Rus
-            </button>
-            <button
-              onClick={onBtnClick}
-              data-index-number={2}
-              className={activeLangButton === 2 ? 'active' : ''}
-            >
-              Multi
-            </button>
-          </div>
-        </section>
+          </header>
 
-        <button className='filter-content-submit'>Filter</button>
+          {/* select genres */}
+          <section className='filter-content-section'>
+            <header>
+              <h4>Genre:</h4>
+            </header>
+            <Select
+              className='filter-content-select'
+              styles={selectStyles}
+              closeMenuOnSelect={false}
+              components={animatedComponents}
+              value={selectedGenre}
+              onChange={setSelectedGenre}
+              options={options}
+              isMulti
+            />
+          </section>
+      
+          {/* year selection */}
+          <section className='filter-content-section'>
+            <header>
+              <h4>Year:</h4>
+              <small>2020</small>
+            </header>
+            <input type="range" />
+          </section>
+
+          {/* choose language */}
+          <section className='filter-content-section'>
+            <header>
+              <h4>Language:</h4>
+            </header>
+            <div className='mini-buttons'>
+              <button
+                onClick={onLangButtonClick}
+                data-index-number={0}
+                className={activeLangButton === 0 ? 'active' : ''}
+              >
+                Eng
+              </button>
+              <button
+                onClick={onLangButtonClick}
+                data-index-number={1}
+                className={activeLangButton === 1 ? 'active' : ''}
+              >
+                Rus
+              </button>
+              <button
+                onClick={onLangButtonClick}
+                data-index-number={2}
+                className={activeLangButton === 2 ? 'active' : ''}
+              >
+                Multi
+              </button>
+            </div>
+          </section>
+        </div>
+
+        {/* filter search button */}
+        <button className='filter-content-button primary-button'>Filter</button>
       </div>
     </div>
   )
