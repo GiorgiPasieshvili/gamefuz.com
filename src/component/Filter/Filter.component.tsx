@@ -36,7 +36,7 @@ export default function Filter() {
       <div className="filter-content">
         <div className="filter-content-top">
           <header className="filter-content-top-header">
-            <img src="/assets/logo.svg" alt="gamefuz" />
+            <img src="/images/logo.svg" alt="gamefuz" />
             <button onClick={toggleFilter} className="icon">
               <AiOutlineClose />
             </button>

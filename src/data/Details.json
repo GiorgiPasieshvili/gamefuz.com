@@ -2,7 +2,7 @@
   {
     "id": 10,
     "title": "detroit: become human",
-    "image": "/assets/normal-posters/detroit.jpg",
+    "image": "/images/normal/detroit.jpg",
     "year": "2019",
     "categories": ["adventure", "3rd-person", "action"],
     "company": "quantic dream",

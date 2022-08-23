@@ -4,19 +4,19 @@
     "images": [
       {
         "id": 1,
-        "poster": "/assets/ingame-posters/first.jpg"
+        "image": "/images/innerpage/first.jpg"
       },
       {
         "id": 2,
-        "poster": "/assets/ingame-posters/second.jpg"
+        "image": "/images/innerpage/second.jpg"
       },
       {
         "id": 3,
-        "poster": "/assets/ingame-posters/third.jpg"
+        "image": "/images/innerpage/third.jpg"
       },
       {
         "id": 4,
-        "poster": "/assets/ingame-posters/fourth.jpg"
+        "image": "/images/innerpage/fourth.jpg"
       }
     ]
   }

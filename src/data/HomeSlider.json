@@ -3,35 +3,35 @@
     "id": 1,
     "title": "alan wake",
     "year": "2012",
-    "poster": "/assets/long-posters/alanwake.jpg",
-    "smallPoster": "/assets/mini-posters/alanwake.jpg"
+    "image": "/images/long/alanwake.jpg",
+    "smallImage": "/images/mini/alanwake.jpg"
   },
   {
     "id": 2,
     "title": "eternal threads",
     "year": "2022",
-    "poster": "/assets/long-posters/eternals.jpg",
-    "smallPoster": "/assets/mini-posters/eternals.png"
+    "image": "/images/long/eternals.jpg",
+    "smallImage": "/images/mini/eternals.png"
   },
   {
     "id": 3,
     "title": "jedi: fallen order",
     "year": "2019",
-    "poster": "/assets/long-posters/jedi.jpg",
-    "smallPoster": "/assets/mini-posters/jedi.png"
+    "image": "/images/long/jedi.jpg",
+    "smallImage": "/images/mini/jedi.png"
   },
   {
     "id": 4,
     "title": "icarus",
     "year": "2021",
-    "poster": "/assets/long-posters/icarus.jpg",
-    "smallPoster": "/assets/mini-posters/icarus.png"
+    "image": "/images/long/icarus.jpg",
+    "smallImage": "/images/mini/icarus.png"
   },
   {
     "id": 5,
     "title": "dolmen",
     "year": "2022",
-    "poster": "/assets/long-posters/dolmen.jpg",
-    "smallPoster": "/assets/mini-posters/dolmen.png"
+    "image": "/images/long/dolmen.jpg",
+    "smallImage": "/images/mini/dolmen.png"
   }
 ]

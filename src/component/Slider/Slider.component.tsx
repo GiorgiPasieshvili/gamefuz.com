@@ -55,13 +55,13 @@ export default function Slider() {
         </div>
       </div>
 
-      {/* long posters */}
-      <div className="slider-posters">
-        {data.map(({ poster, title }, index) => (
+      {/* long images */}
+      <div className="slider-images">
+        {data.map(({ image, title }, index) => (
           <img
             key={index}
             className={index === current ? "active" : ""}
-            src={poster}
+            src={image}
             alt={title}
           />
         ))}
@@ -84,14 +84,14 @@ export default function Slider() {
             ))}
           </div>
 
-          {/* counter with mini posters */}
+          {/* counter with mini images */}
           <div className="slider-counter">
-            {data.map(({ smallPoster, title }, index) => (
+            {data.map(({ smallImage, title }, index) => (
               <img
                 key={index}
                 className={index === current ? "active" : ""}
                 onClick={() => slideClick(index)}
-                src={smallPoster}
+                src={smallImage}
                 alt={title}
               />
             ))}

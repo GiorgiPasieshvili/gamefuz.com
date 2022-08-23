@@ -55,28 +55,28 @@ export default function SliderInGame() {
         </div>
       </div>
 
-      {/* posters */}
-      <div className="sliderin-posters">
-        {images.map(({ poster, title }: any, index: any) => (
+      {/* images */}
+      <div className="sliderin-images">
+        {images.map(({ image, title }: any, index: any) => (
           <img
             key={index}
             className={index + 1 === current ? "active" : ""}
-            src={poster}
+            src={image}
             alt={title}
           />
         ))}
       </div>
 
-      {/* counter with mini posters */}
+      {/* counter with mini images */}
       <div className="sliderin-counter">
         <div className="container">
-          <img className="yplay" src="/assets/yplay.png" alt="youtube play" />
-          {images.map(({ poster }: any, index: any) => (
+          <img className="yplay" src="/images/youtube.png" alt="youtube play" />
+          {images.map(({ image }: any, index: any) => (
             <img
               key={index}
               className={index + 1 === current ? "active" : ""}
               onClick={() => slideClick(index)}
-              src={poster}
+              src={image}
               alt="small"
             />
           ))}

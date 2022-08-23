@@ -16,7 +16,7 @@ export default function Comments() {
         <div className="comments-addition">
           <img
             className="comments-pic"
-            src="/assets/people/user.jpg"
+            src="/images/people/user.jpg"
             alt="profile pic"
           />
           <div className="comments-addition-box">

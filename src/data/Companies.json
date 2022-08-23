@@ -2,36 +2,36 @@
   {
     "id": 1,
     "title": "ubisoft",
-    "image": "/assets/companies/ubisoft.png"
+    "image": "/images/companies/ubisoft.png"
   },
   {
     "id": 2,
     "title": "nintendo",
-    "image": "/assets/companies/nintendo.png"
+    "image": "/images/companies/nintendo.png"
   },
   {
     "id": 3,
     "title": "tencent",
-    "image": "/assets/companies/tencent.png"
+    "image": "/images/companies/tencent.png"
   },
   {
     "id": 4,
     "title": "electronic arts",
-    "image": "/assets/companies/ea.png"
+    "image": "/images/companies/ea.png"
   },
   {
     "id": 5,
     "title": "sega",
-    "image": "/assets/companies/sega.png"
+    "image": "/images/companies/sega.png"
   },
   {
     "id": 6,
     "title": "unity",
-    "image": "/assets/companies/unity.png"
+    "image": "/images/companies/unity.png"
   },
   {
     "id": 7,
     "title": "tencent",
-    "image": "/assets/companies/tencent.png"
+    "image": "/images/companies/tencent.png"
   }
 ]
