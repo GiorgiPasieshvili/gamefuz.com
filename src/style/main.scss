@@ -1,7 +1,7 @@
-@import './abstract/reset';
-@import './abstract/fonts';
-@import './abstract/variables';
-@import './abstract/inputs';
+@import "./abstract/reset";
+@import "./abstract/fonts";
+@import "./abstract/variables";
+@import "./abstract/inputs";
 
 body {
   .App {
@@ -15,9 +15,9 @@ body {
     --color-backgrounds: var(--color-primary-darker);
     --color-details: var(--color-primary-lighter);
     --color-details-dark-bg: var(--color-primary-lighter);
-    
-    --slider-poster-opacity: .4;
-    --slider-counter-opacity: .75;
+
+    --slider-poster-opacity: 0.4;
+    --slider-counter-opacity: 0.75;
 
     --textarea-border-color: var(--color-primary-light);
     --textarea-down-bg-color: var(--color-secondary-darker);
@@ -55,16 +55,16 @@ body {
 
     color: white;
     background: var(--color-primary);
-    opacity: .6;
-    transition: .4s;
+    opacity: 0.6;
+    transition: 0.4s;
 
     svg {
       font-size: 22px;
     }
-    
+
     &:hover {
       opacity: 1;
-      transform: scale(.9);
+      transform: scale(0.9);
     }
   }
 
@@ -76,8 +76,8 @@ body {
     color: white;
     background: var(--color-primary);
     border-radius: 6px;
-    opacity: .9;
-    transition: .2s;
+    opacity: 0.9;
+    transition: 0.2s;
 
     &:hover {
       opacity: 1;
@@ -93,7 +93,7 @@ body {
       width: 55px;
       height: 25px;
       border-radius: 6px;
-      
+
       display: flex;
       justify-content: center;
       align-items: center;

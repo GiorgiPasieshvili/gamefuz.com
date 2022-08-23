@@ -1,1 +1,1 @@
-export { default } from './Filter.component';
+export { default } from "./Filter.component";

@@ -1,12 +1,10 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const GET_CATEGORIES = gql`
   query {
-    categories (pagination: {
-      limit: 20
-    }) {
+    categories(pagination: { limit: 20 }) {
       data {
-        id,
+        id
         attributes {
           name
         }

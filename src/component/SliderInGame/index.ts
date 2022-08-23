@@ -1,1 +1,1 @@
-export { default } from './SliderInGame.component';
+export { default } from "./SliderInGame.component";

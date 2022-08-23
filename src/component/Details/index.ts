@@ -1,1 +1,1 @@
-export { default } from './Details.component';
+export { default } from "./Details.component";

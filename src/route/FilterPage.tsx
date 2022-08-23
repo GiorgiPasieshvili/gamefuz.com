@@ -2,10 +2,5 @@
 
 /** @namespace @route/FilterPage/Component */
 export default function FilterPage() {
-
-  return (
-    <div>
-      This is a filter page
-    </div>
-  );
+  return <div>This is a filter page</div>;
 }

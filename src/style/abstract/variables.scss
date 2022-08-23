@@ -1,18 +1,18 @@
 :root {
-  $font-bebas: 'Bebas Neue', sans-serif;
-  $font-familjen: 'Familjen Grotesk', sans-serif;
-  $font-gordeziani: 'GL Gordeziani', sans-serif;
-  $font-mkafio: 'GL Mkafio', sans-serif;
+  $font-bebas: "Bebas Neue", sans-serif;
+  $font-familjen: "Familjen Grotesk", sans-serif;
+  $font-gordeziani: "GL Gordeziani", sans-serif;
+  $font-mkafio: "GL Mkafio", sans-serif;
 
   --font-default: #{$font-bebas};
   --font-secondary: #{$font-mkafio};
   --font-details: #{$font-familjen};
 
-  --color-primary: #E4AA53;
+  --color-primary: #e4aa53;
   --color-primary-dark: #222222;
   --color-primary-darker: rgb(29, 29, 29);
   --color-primary-light: #707070;
-  --color-primary-lighter: #D7D7D7;
+  --color-primary-lighter: #d7d7d7;
   --color-secondary-dark: #353535;
   --color-secondary-darker: #282828;
 
@@ -25,6 +25,6 @@
   --slider-poster-opacity: 0;
   --slider-counter-opacity: 1;
 
-  --textarea-border-color: #D8D8D8;
-  --textarea-down-bg-color: #FDFBEC;
+  --textarea-border-color: #d8d8d8;
+  --textarea-down-bg-color: #fdfbec;
 }

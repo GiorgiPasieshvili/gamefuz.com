@@ -1,42 +1,53 @@
 /* utilities import */
-import { useState } from 'react';
+import { useState } from "react";
 /* import assets & styles */
-import { AiFillWindows } from 'react-icons/ai';
-import './Details.style.scss';
-import details from '@data/Details.json';
+import { AiFillWindows } from "react-icons/ai";
+import "./Details.style.scss";
+import details from "@data/Details.json";
 
 /** @namespace @component/Details/Component */
 export default function Details() {
   const [activeButton, setActiveButton] = useState(1);
-  const { title, image, year, categories, company, interface_lang, dubbing_lang, crack, description, specs } = details[0];
+  const {
+    title,
+    image,
+    year,
+    categories,
+    company,
+    interface_lang,
+    dubbing_lang,
+    crack,
+    description,
+    specs,
+  } = details[0];
 
   const onButtonClick = (e: any) => {
     const buttonIndex = e.target.dataset.indexNumber;
     setActiveButton(Number(buttonIndex));
-  }
+  };
 
   return (
-    <section className='details section'>
-
+    <section className="details section">
       {/* left side - image and download */}
-      <div className='details-left'>
+      <div className="details-left">
         <img src={image} alt={title} />
-        <a className='primary-button' href="/product/1">Download</a>
+        <a className="primary-button" href="/product/1">
+          Download
+        </a>
       </div>
-      
-      {/* right side - title, info, desc, specs */}
-      <div className='details-right'>
 
+      {/* right side - title, info, desc, specs */}
+      <div className="details-right">
         {/* top part of right side - title, indo, desc */}
         <div>
           {/* header of right side - game title */}
-          <header className='details-title'>
+          <header className="details-title">
             <h2>{title}</h2>
             <small>{year}</small>
           </header>
-          
+
           {/* section of right side - game information */}
-          <section className='details-info details-section'>
+          <section className="details-info details-section">
             <h3>information on game:</h3>
             <ul>
               {/* game genre */}
@@ -74,36 +85,35 @@ export default function Details() {
           </section>
 
           {/* section of right side - game description */}
-          <section className='details-section'>
+          <section className="details-section">
             <h3>description:</h3>
             <p>{description}</p>
           </section>
         </div>
 
         {/* bottom part of right side - system specs */}
-        <section className='details-specs details-section'>
-
+        <section className="details-specs details-section">
           <header>
             <h3>system requirements:</h3>
-            <div className='mini-buttons'>
+            <div className="mini-buttons">
               <button
                 onClick={onButtonClick}
                 data-index-number={0}
-                className={activeButton === 0 ? 'active' : ''}
+                className={activeButton === 0 ? "active" : ""}
               >
                 Low
               </button>
               <button
                 onClick={onButtonClick}
                 data-index-number={1}
-                className={activeButton === 1 ? 'active' : ''}
+                className={activeButton === 1 ? "active" : ""}
               >
                 Best
               </button>
             </div>
           </header>
           {/* low system specs */}
-          <ul className={activeButton === 0 ? 'active' : ''} >
+          <ul className={activeButton === 0 ? "active" : ""}>
             <li>
               <small>OS: </small>
               <span>{specs.low.os}</span>
@@ -130,7 +140,7 @@ export default function Details() {
             </li>
           </ul>
           {/* best system specs */}
-          <ul className={activeButton === 1 ? 'active' : ''} >
+          <ul className={activeButton === 1 ? "active" : ""}>
             <li>
               <small>OS: </small>
               <span>{specs.best.os}</span>
@@ -158,8 +168,11 @@ export default function Details() {
           </ul>
         </section>
 
-        <div className='details-icon'> <AiFillWindows /> </div>
+        <div className="details-icon">
+          {" "}
+          <AiFillWindows />{" "}
+        </div>
       </div>
     </section>
-  )
+  );
 }

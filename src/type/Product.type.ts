@@ -1,6 +1,6 @@
 export type ProductType = {
   id: number;
   attributes: {
-    title: string
+    title: string;
   };
 };

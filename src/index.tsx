@@ -1,7 +1,7 @@
-import ReactDOM from 'react-dom/client';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import ReactDOM from "react-dom/client";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { ThemeProvider } from "@util/ThemeContext";
-import App from './App';
+import App from "./App";
 
 /* configure apollo client */
 const client = new ApolloClient({
@@ -11,7 +11,7 @@ const client = new ApolloClient({
 
 /* create and render root element */
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 
 root.render(
@@ -19,5 +19,5 @@ root.render(
     <ThemeProvider>
       <App />
     </ThemeProvider>
-  </ApolloProvider>,
+  </ApolloProvider>
 );

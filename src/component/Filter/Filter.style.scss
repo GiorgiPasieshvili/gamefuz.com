@@ -12,8 +12,8 @@
     position: fixed;
     top: 12%;
     left: -10px;
-    opacity: .8;
-    transition: .4s;
+    opacity: 0.8;
+    transition: 0.4s;
     z-index: 10;
 
     svg {
@@ -39,7 +39,7 @@
     left: -340px;
     z-index: 10;
     transform: translateY(-50%);
-    transition: .4s;
+    transition: 0.4s;
 
     display: flex;
     flex-direction: column;
@@ -73,7 +73,8 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 16px;
-        h4, small {
+        h4,
+        small {
           color: var(--color-details-dark-bg);
           font-size: 22px;
         }

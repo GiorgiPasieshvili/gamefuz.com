@@ -1,1 +1,1 @@
-export { default } from './Slider.component';
+export { default } from "./Slider.component";
