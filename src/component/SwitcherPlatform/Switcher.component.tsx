@@ -6,10 +6,10 @@ import "./Switcher.style.scss";
 export default function Switcher() {
   return (
     <div className="switcher">
-      <button className="icon">
+      <button className="switcher__button icon">
         <AiFillAndroid />
       </button>
-      <div className="switcher-options"></div>
+      <div className="switcher__options"></div>
     </div>
   );
 }

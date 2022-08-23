@@ -7,45 +7,53 @@ export default function Comments() {
   return (
     <section className="comments section">
       {/* header of the section */}
-      <header className="section-header">
-        <h2 className="section-header-title">comments</h2>
+      <header className="section__header">
+        <h2 className="section__title">comments</h2>
       </header>
 
-      <main>
+      <main className="comments__main">
         {/* comment addition part */}
-        <div className="comments-addition">
+        <div className="comments__self">
           <img
-            className="comments-pic"
+            className="comments__picture"
             src="/images/people/user.jpg"
             alt="profile pic"
           />
-          <div className="comments-addition-box">
-            <textarea placeholder="Add Comment..."></textarea>
-            <div className="comments-addition-box-down">
-              <button className="primary-button">Log in to post</button>
-            </div>
+
+          <div className="comments__box">
+            <textarea
+              className="comments__box--main"
+              placeholder="Add Comment..."
+            ></textarea>
+
+            <footer className="comments__box--footer">
+              <button className="comments__button--small primary-button">
+                Log in to post
+              </button>
+            </footer>
           </div>
         </div>
 
         {/* all comment messages renders here */}
-        <ul className="comments-content">
+        <ul className="comments__list">
           {comments.map(({ name, surname, pic, comment }, index) => (
-            <li key={index}>
+            <li className="comments__item" key={index}>
               {/* profile picture of user */}
-              <img className="comments-pic" src={pic} alt={name} />
+              <img className="comments__picture" src={pic} alt={name} />
               {/* name and comment of user */}
+
               <div>
-                <h3>
-                  {name} <span>{surname}</span>
+                <h3 className="comments__name">
+                  {name} <span className="comments__surname">{surname}</span>
                 </h3>
-                <p>{comment}</p>
+                <p className="comments__comment">{comment}</p>
               </div>
             </li>
           ))}
         </ul>
 
         {/* load more button */}
-        <button className="comments-load primary-button">
+        <button className="comments__button--normal primary-button">
           Load 4 more comments
         </button>
       </main>

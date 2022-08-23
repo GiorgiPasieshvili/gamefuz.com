@@ -35,12 +35,12 @@ body {
   .section {
     margin-top: 32px;
 
-    &-header {
+    &__header {
       margin-bottom: 20px;
+    }
 
-      &-title {
-        font-size: 32px;
-      }
+    &__title {
+      font-size: 32px;
     }
   }
 

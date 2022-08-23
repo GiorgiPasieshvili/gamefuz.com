@@ -1,12 +1,12 @@
 .products {
-  &-item {
+  &__item {
     border: 2px solid transparent;
     border-radius: 9px;
 
     &:hover {
       border-color: var(--color-primary);
 
-      img {
+      .products__image {
         transform: scale(1.1);
       }
     }

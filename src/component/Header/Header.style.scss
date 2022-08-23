@@ -4,14 +4,14 @@
   top: 0;
   z-index: 1;
 
-  .container {
+  &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 35px 0;
   }
 
-  &-menu {
+  &__menu {
     display: flex;
     justify-content: space-between;
     align-items: center;

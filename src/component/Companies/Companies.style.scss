@@ -1,22 +1,22 @@
 .companies {
-  &-item {
+  &__item {
     border: 2px solid transparent;
-
-    a {
-      background: var(--color-backgrounds);
-    }
 
     &:hover {
       border-color: var(--color-primary);
 
-      img {
+      .companies__image {
         transform: scale(1.2);
       }
     }
+  }
 
-    img {
-      width: auto;
-      height: auto;
-    }
+  &__link {
+    background: var(--color-backgrounds);
+  }
+
+  &__image {
+    width: auto;
+    height: auto;
   }
 }

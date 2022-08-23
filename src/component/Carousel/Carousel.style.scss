@@ -1,29 +1,29 @@
 .carousel {
-  &-header {
+  &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
 
-    &-buttons {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 
-      button {
-        color: var(--color-details);
-      }
-
-      .swiper-button-disabled {
-        color: var(--color-details-disabled);
-      }
-
-      svg {
-        font-size: 40px;
-      }
+    .swiper-button-disabled {
+      color: var(--color-details-disabled);
     }
   }
 
-  &-content-item {
+  &__button {
+    color: var(--color-details);
+
+    svg {
+      font-size: 40px;
+    }
+  }
+
+  .swiper-slide {
     height: 100%;
     border-radius: 6px;
     overflow: hidden;

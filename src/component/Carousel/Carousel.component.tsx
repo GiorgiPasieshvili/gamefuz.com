@@ -16,15 +16,15 @@ export default function Carousel({ title, height, slides, children }: any) {
   return (
     <div className="carousel">
       {/* section title and buttons */}
-      <header className="carousel-header section-header">
-        <h2 className="section-header-title">{title}</h2>
+      <header className="carousel__header section__header">
+        <h2 className="section__title">{title}</h2>
 
         {/* left and right buttons */}
-        <div className="carousel-header-buttons">
-          <button ref={(node) => setPrevRef(node)}>
+        <div className="carousel__buttons">
+          <button className="carousel__button" ref={(node) => setPrevRef(node)}>
             <BiChevronLeft />
           </button>
-          <button ref={(node) => setNextRef(node)}>
+          <button className="carousel__button" ref={(node) => setNextRef(node)}>
             <BiChevronRight />
           </button>
         </div>

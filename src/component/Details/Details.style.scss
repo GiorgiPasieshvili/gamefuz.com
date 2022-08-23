@@ -3,7 +3,7 @@
   gap: 28px;
 
   /* default styles for any section */
-  &-section {
+  &__section {
     font-family: var(--font-details);
     margin-bottom: 19px;
 
@@ -24,55 +24,65 @@
     }
   }
 
-  /* left side - image and download */
-  &-left {
+  &__side {
     display: flex;
     flex-direction: column;
-    gap: 9px;
 
-    img {
-      width: 285px;
-      height: 415px;
-      border-radius: 6px;
+    /* left side - image and download */
+    &--left {
+      gap: 9px;
     }
 
-    a {
-      font: 23px var(--font-details);
-      height: 50px;
+    /* right side divided by 2 parts - title, info, desc & specs */
+    &--right {
+      justify-content: space-between;
+      flex-grow: 1;
+      position: relative;
     }
   }
 
-  /* right side divided by 2 parts - title, info, desc & specs */
-  &-right {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    flex-grow: 1;
-    position: relative;
+  &__image {
+    width: 285px;
+    height: 415px;
+    border-radius: 6px;
   }
 
-  /* section of right side - game title */
-  &-title {
+  &__link {
+    font: 23px var(--font-details);
+    height: 50px;
+  }
+
+  /* header of right side - game title & year */
+  &__header {
     display: flex;
-    align-items: baseline;
-    gap: 6px;
-    margin-bottom: 10px;
 
-    h2 {
-      font-size: 40px;
+    &--default {
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 10px;
     }
 
-    small {
-      font-size: 27px;
-      color: var(--color-primary);
+    &--secondary {
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
     }
+  }
+
+  &__title {
+    font-size: 40px;
+  }
+
+  &__year {
+    font-size: 27px;
+    color: var(--color-primary);
   }
 
   /* section of right side - game information */
-  &-info {
+  &__info {
     text-transform: capitalize;
 
-    li:first-child {
+    &--genre {
       span {
         &:last-child {
           &::after {
@@ -86,8 +96,7 @@
       }
     }
 
-    li:nth-child(3),
-    li:nth-child(4) {
+    &--lang {
       span {
         text-transform: uppercase;
 
@@ -103,53 +112,48 @@
       }
     }
 
-    li:last-child {
+    &--crack {
       text-transform: none;
     }
   }
 
   /* bottom part of right side - system specs */
-  &-specs {
+  &__requirements {
     padding: 20px;
     border-radius: 6px;
 
     color: var(--color-details-dark-bg);
     background: var(--color-backgrounds);
     margin-bottom: 0;
+  }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2px;
+  &__list {
+    height: 70px;
+    display: none;
+
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    li {
+      width: 50%;
+      white-space: nowrap;
     }
 
-    ul {
-      height: 70px;
-      display: none;
-
-      justify-content: space-between;
-      flex-direction: column;
-      flex-wrap: wrap;
-
-      li {
-        width: 50%;
-        white-space: nowrap;
-      }
-
-      small {
-        color: var(--color-primary);
-      }
+    small {
+      color: var(--color-primary);
     }
 
-    .active {
+    &--active {
       display: flex;
     }
   }
 
-  &-icon {
+  &__icon {
     position: absolute;
     right: 0;
+    top: 0;
+
     svg {
       font-size: 96px;
     }

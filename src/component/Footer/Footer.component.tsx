@@ -5,7 +5,7 @@ import "./Footer.style.scss";
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container">© 2022 gamefuz.com</div>
+      <div className="footer__container container">© 2022 gamefuz.com</div>
     </footer>
   );
 }

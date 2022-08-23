@@ -6,13 +6,13 @@ import "./Search.style.scss";
 export default function Search() {
   return (
     <div className="search">
-      <div className="search-bar">
-        <input type="text" placeholder="Search.." />
-        <button className="icon">
+      <div className="search__bar">
+        <input className="search__input" type="text" placeholder="Search.." />
+        <button className="search__button icon">
           <BiSearch />
         </button>
       </div>
-      <div className="search-results"></div>
+      <div className="search__result"></div>
     </div>
   );
 }

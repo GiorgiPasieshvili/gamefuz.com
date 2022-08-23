@@ -8,9 +8,9 @@ import "./Header.style.scss";
 export default function Header() {
   return (
     <header className="header">
-      <div className="container">
+      <div className="header__container container">
         <Logo />
-        <div className="header-menu">
+        <div className="header__menu">
           <Search />
           <SwitherTheme />
         </div>

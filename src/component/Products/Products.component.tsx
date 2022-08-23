@@ -14,9 +14,9 @@ export default function Products({ type }: { type: string }) {
     <section className="products section">
       <Carousel title={title} height={280} slides={7}>
         {content.map(({ id, title, image }) => (
-          <SwiperSlide className="products-item carousel-content-item" key={id}>
-            <Link to={"/product/" + id}>
-              <img src={image} alt={title} />
+          <SwiperSlide className="products__item" key={id}>
+            <Link className="products__link" to={"/product/" + id}>
+              <img className="products__image" src={image} alt={title} />
             </Link>
           </SwiperSlide>
         ))}

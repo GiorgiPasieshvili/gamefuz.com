@@ -12,12 +12,9 @@ export default function Companies() {
     <section className="companies section">
       <Carousel title="companies" height={120} slides={6.5}>
         {companies.map(({ id, title, image }) => (
-          <SwiperSlide
-            className="companies-item carousel-content-item"
-            key={id}
-          >
-            <Link to={"/company/" + id}>
-              <img src={image} alt={title} />
+          <SwiperSlide className="companies__item" key={id}>
+            <Link className="companies__link" to={"/company/" + id}>
+              <img className="companies__image" src={image} alt={title} />
             </Link>
           </SwiperSlide>
         ))}
