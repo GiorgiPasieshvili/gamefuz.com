@@ -1,151 +1,65 @@
 .details {
-  display: flex;
-  gap: 28px;
+  font-family: var(--font-details);
 
-  /* default styles for any section */
-  &__section {
-    font-family: var(--font-details);
-    margin-bottom: 19px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 0 28px;
 
-    h3 {
-      font: 25px var(--font-default);
-    }
-
-    p {
-      font-size: 18px;
-    }
-
-    small {
-      font-size: 20px;
-    }
-
-    span {
-      font-size: 18px;
-    }
-  }
-
-  &__side {
+  aside {
+    grid-row: 1/4;
     display: flex;
     flex-direction: column;
+    gap: 9px;
+  }
 
-    /* left side - image and download */
-    &--left {
-      gap: 9px;
-    }
+  header {
+    position: relative;
+    margin-bottom: 10px;
+  }
 
-    /* right side divided by 2 parts - title, info, desc & specs */
-    &--right {
-      justify-content: space-between;
-      flex-grow: 1;
-      position: relative;
+  main {
+    section {
+      margin-bottom: 19px;
     }
   }
 
-  &__image {
+  footer {
+    align-self: end;
+    padding: 20px;
+    border-radius: 6px;
+    color: var(--color-details-dark-bg);
+    background: var(--color-backgrounds);
+  }
+
+  /* Aside */
+  &__picture {
     width: 285px;
     height: 415px;
     border-radius: 6px;
   }
 
-  &__link {
+  &__download {
     font: 23px var(--font-details);
     height: 50px;
   }
 
-  /* header of right side - game title & year */
-  &__header {
-    display: flex;
+  /* Header */
+  &__heading {
+    font-family: var(--font-default);
 
-    &--default {
-      align-items: baseline;
-      gap: 6px;
-      margin-bottom: 10px;
-    }
-
-    &--secondary {
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2px;
-    }
-  }
-
-  &__title {
-    font-size: 40px;
-  }
-
-  &__year {
-    font-size: 27px;
-    color: var(--color-primary);
-  }
-
-  /* section of right side - game information */
-  &__info {
-    text-transform: capitalize;
-
-    &--genre {
-      span {
-        &:last-child {
-          &::after {
-            content: "";
-          }
-        }
-
-        &::after {
-          content: ",";
-        }
-      }
-    }
-
-    &--lang {
-      span {
-        text-transform: uppercase;
-
-        &:last-child {
-          &::after {
-            content: "";
-          }
-        }
-
-        &::after {
-          content: " | ";
-        }
-      }
-    }
-
-    &--crack {
-      text-transform: none;
-    }
-  }
-
-  /* bottom part of right side - system specs */
-  &__requirements {
-    padding: 20px;
-    border-radius: 6px;
-
-    color: var(--color-details-dark-bg);
-    background: var(--color-backgrounds);
-    margin-bottom: 0;
-  }
-
-  &__list {
-    height: 70px;
-    display: none;
-
-    justify-content: space-between;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-    li {
-      width: 50%;
-      white-space: nowrap;
-    }
-
-    small {
+    span {
+      font-size: 27px;
+      margin-left: 6px;
       color: var(--color-primary);
     }
 
-    &--active {
-      display: flex;
+    &--big {
+      font-size: 40px;
+    }
+
+    &--small {
+      font-size: 25px;
     }
   }
 
@@ -156,6 +70,74 @@
 
     svg {
       font-size: 96px;
+    }
+  }
+
+  /* Main */
+  &__paragraph {
+    font-size: 18px;
+  }
+
+  &__list {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+
+    span {
+      font-size: 18px;
+      margin-left: 4px;
+      color: var(--color-details);
+    }
+
+    &--secondary {
+      height: 65px;
+      display: none;
+      flex-wrap: wrap;
+      gap: 2px;
+
+      li {
+        width: 50%;
+        white-space: nowrap;
+        color: var(--color-primary);
+      }
+    }
+
+    &--active {
+      display: flex;
+    }
+  }
+
+  /* Helper Classes */
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__comma {
+    &:last-child {
+      &::after {
+        content: "";
+      }
+    }
+
+    &::after {
+      content: ",";
+    }
+  }
+
+  &__vertical-bar {
+    text-transform: uppercase;
+
+    &:last-child {
+      &::after {
+        content: "";
+      }
+    }
+
+    &::after {
+      content: " | ";
     }
   }
 }
