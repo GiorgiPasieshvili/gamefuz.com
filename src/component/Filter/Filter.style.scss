@@ -1,6 +1,4 @@
 .filter {
-  font-family: var(--font-details);
-
   &-toggle {
     width: 75px;
     height: 75px;
@@ -26,77 +24,62 @@
     }
   }
 
-  &-content {
-    width: 340px;
-    min-height: 470px;
-    height: 80vh;
-    padding: 25px 25px 50px 25px;
-    border-radius: 0 6px 6px 0;
-    background: var(--color-backgrounds);
+  font-family: var(--font-details);
+  width: 340px;
+  min-height: 470px;
+  height: 80vh;
+  padding: 25px 25px 50px 25px;
+  border-radius: 0 6px 6px 0;
+  background: var(--color-backgrounds);
 
-    position: fixed;
-    top: 50%;
-    left: -340px;
-    z-index: 10;
-    transform: translateY(-50%);
-    transition: 0.4s;
+  position: fixed;
+  top: 50%;
+  left: -340px;
+  z-index: 10;
+  transform: translateY(-50%);
+  transition: 0.4s;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    &-top {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-
-      &-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        img {
-          width: 150px;
-          height: 30px;
-        }
-
-        .icon {
-          width: 34px;
-          height: 34px;
-        }
-      }
-    }
-
-    &-section {
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 16px;
-        h4,
-        small {
-          color: var(--color-details-dark-bg);
-          font-size: 22px;
-        }
-      }
-    }
-
-    &-select {
-      text-transform: capitalize;
-    }
-
-    &-button {
-      font-size: 22px;
-      height: 52px;
-    }
+  &--active {
+    left: 0;
   }
 
-  &-active {
-    .filter-content {
-      left: 0;
-    }
-    .filter-toggle {
-      display: none;
-    }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 150px;
+    height: 30px;
+  }
+
+  &__icon {
+    transform: scale(0.8);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__label {
+    font-size: 20px;
+    margin: 20px 0 10px;
+    color: var(--color-details-dark-bg);
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__select {
+    text-transform: capitalize;
+  }
+
+  &__button {
+    font-size: 20px;
+    height: 52px;
+    margin: auto 0 30px;
   }
 }
