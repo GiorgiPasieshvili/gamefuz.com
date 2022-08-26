@@ -3,14 +3,14 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import "./SliderButtons.style.scss";
 
 /** @namespace @component/SliderButtons/Component */
-export default function SliderButtons({ prevSlide, nextSlide }: any) {
+export default function SliderButtons({ isLastSlide, isVideoActive, prevSlide, nextSlide }: any) {
   return (
     <div className="slider-buttons">
-      <button onClick={prevSlide}>
+      <button className={isVideoActive ? "hide" : ""} onClick={prevSlide}>
         <BsChevronCompactLeft />
       </button>
 
-      <button onClick={nextSlide}>
+      <button className={isLastSlide ? "hide" : ""} onClick={nextSlide}>
         <BsChevronCompactRight />
       </button>
     </div>

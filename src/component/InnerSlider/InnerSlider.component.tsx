@@ -12,55 +12,81 @@ import data from "@data/InnerSlider.json";
 /** @namespace @component/InnerSlider/Component */
 export default function InnerSlider() {
   const { images, video } = data[0];
-  const [current, setCurrent] = useState<number>(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVideoActive, setVideoActive] = useState(true);
 
   // go to the next slide
   const nextSlide = () => {
-    const isLastSlide = current === images.length;
-    const newIndex = isLastSlide ? 0 : current + 1;
-    setCurrent(newIndex);
+    const isLastSlide = currentSlide === images.length - 1;
+
+    if (isVideoActive) {
+      disableVideo();
+    } else if (!isLastSlide) {
+      setCurrentSlide(currentSlide + 1);
+    }
   };
 
   // go to the previous slide
   const prevSlide = () => {
-    const newIndex = current === 0 ? 5 : current - 1;
-    setCurrent(newIndex);
+    const isFirstSlide = currentSlide === 0;
+
+    if (!isVideoActive && isFirstSlide) {
+      enableVideo();
+    } else if (!isVideoActive) {
+      setCurrentSlide(currentSlide - 1);
+    }
   };
 
   // choose slide for your own
   const slideClick = (index: number) => {
-    setCurrent(index + 1);
+    setCurrentSlide(index);
+  };
+
+  const disableVideo = () => {
+    setVideoActive(false);
+  };
+
+  const enableVideo = () => {
+    setCurrentSlide(0);
+    setVideoActive(true);
   };
 
   return (
     <div className="inner-slider">
       <div className="container">
-        {/* <Streamer
-          className={current === 0 ? "active" : ""}
+        <SliderShowcase data={images} current={currentSlide} />
+
+        <Streamer
+          className={`inner-slider__video ${
+            isVideoActive ? "inner-slider__video--active" : ""
+          }`}
           videoId={video}
-          setCurrent={setCurrent}
-        /> */}
+          isVideoActive={isVideoActive}
+          disableVideo={disableVideo}
+        />
 
-        <SliderShowcase data={images} current={current} />
-        <SliderButtons prevSlide={prevSlide} nextSlide={nextSlide} />
-
-        <footer className="inner-slider__footer">
-          <img
-            className="inner-slider__video"
-            src="/images/youtube.png"
-            alt="youtube"
-          />
-          <SliderPagination
-            data={images}
-            current={current}
-            slideClick={slideClick}
-          />
-        </footer>
+        <SliderButtons
+          isVideoActive={isVideoActive}
+          isLastSlide={currentSlide === images.length - 1}
+          prevSlide={prevSlide}
+          nextSlide={nextSlide}
+        />
+        {!isVideoActive && (
+          <footer className="inner-slider__footer">
+            <img
+              className="inner-slider__icon"
+              src="/images/youtube.png"
+              alt="youtube"
+              onClick={enableVideo}
+            />
+            <SliderPagination
+              data={images}
+              current={currentSlide}
+              slideClick={slideClick}
+            />
+          </footer>
+        )}
       </div>
     </div>
   );
 }
-
-// className={`inner-slider__pagination ${
-//   current !== 0 ? "inner-slider__pagination--active" : ""
-// }`}

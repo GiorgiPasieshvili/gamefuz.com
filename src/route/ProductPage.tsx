@@ -4,8 +4,17 @@ import Details from "@component/Details";
 import Products from "@component/Products";
 import Comments from "@component/Comments";
 
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 /** @namespace @route/ProductPage/Component */
 export default function ProductPage() {
+  const id = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   return (
     <>
       <InnerSlider />
