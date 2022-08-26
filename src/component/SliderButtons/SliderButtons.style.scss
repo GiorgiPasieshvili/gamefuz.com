@@ -1,0 +1,26 @@
+.slider-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  button {
+    opacity: 0.7;
+    transition: 0.1s;
+    pointer-events: all;
+
+    svg {
+      font-size: 80px;
+      color: var(--color-details-dark-bg);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

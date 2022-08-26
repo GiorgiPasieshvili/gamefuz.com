@@ -1,0 +1,21 @@
+.slider-title {
+  a {
+    display: none;
+    align-items: baseline;
+
+    h3 {
+      font-size: 45px;
+      margin-right: 6px;
+      color: var(--color-details-dark-bg);
+    }
+
+    span {
+      font-size: 33px;
+      color: var(--color-primary);
+    }
+  }
+
+  .active {
+    display: flex;
+  }
+}

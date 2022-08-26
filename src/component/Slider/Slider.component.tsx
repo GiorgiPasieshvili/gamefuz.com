@@ -1,10 +1,14 @@
 /* utilities import */
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 /* assets & styles import */
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import SliderButtons from "@component/SliderButtons";
+import SliderTitle from "@component/SliderTitle";
+import SliderPagination from "@component/SliderPagination";
+import SliderShowcase from "@component/SliderShowcase";
+
 import "./Slider.style.scss";
 import data from "@data/HomeSlider.json";
+
 /* import constant values */
 import { SLIDER_INTERVAL } from "./Slider.config";
 
@@ -42,61 +46,21 @@ export default function Slider() {
 
   return (
     <div className="slider">
-      {/* left and right buttons */}
-      <div className="slider-buttons">
-        <div className="container">
-          <button className="left" onClick={prevSlide}>
-            <BsChevronCompactLeft />
-          </button>
-
-          <button className="right" onClick={nextSlide}>
-            <BsChevronCompactRight />
-          </button>
-        </div>
-      </div>
-
       {/* long images */}
-      <div className="slider-images">
-        {data.map(({ image, title }, index) => (
-          <img
-            key={index}
-            className={index === current ? "active" : ""}
-            src={image}
-            alt={title}
+      <SliderShowcase data={data} current={current} />
+
+      <div className="container">
+        <SliderButtons prevSlide={prevSlide} nextSlide={nextSlide} />
+
+        {/* footer of slider */}
+        <footer className="slider__footer">
+          <SliderTitle data={data} current={current} />
+          <SliderPagination
+            data={data}
+            current={current}
+            slideClick={slideClick}
           />
-        ))}
-      </div>
-
-      {/* bottom section of slider */}
-      <div className="slider-bottom">
-        <div className="container">
-          {/* game title and year */}
-          <div className="slider-title">
-            {data.map(({ title, year, id }, index) => (
-              <Link
-                key={index}
-                to={"/product/" + id}
-                className={index === current ? "active" : ""}
-              >
-                <h3>{title}</h3>
-                <h4>{year}</h4>
-              </Link>
-            ))}
-          </div>
-
-          {/* counter with mini images */}
-          <div className="slider-counter">
-            {data.map(({ smallImage, title }, index) => (
-              <img
-                key={index}
-                className={index === current ? "active" : ""}
-                onClick={() => slideClick(index)}
-                src={smallImage}
-                alt={title}
-              />
-            ))}
-          </div>
-        </div>
+        </footer>
       </div>
     </div>
   );
