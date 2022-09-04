@@ -1,3 +1,3 @@
-# gamefuz-frontend
+# frontend for website, made with React.js
 
-https://gamefuz-frontend.vercel.app/
+https://gamefuz.vercel.app/
