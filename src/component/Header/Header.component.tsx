@@ -1,7 +1,7 @@
 /* import assets & styles */
-import Logo from "@component/Logo";
-import Search from "@component/Search";
-import SwitherTheme from "@component/SwitcherTheme";
+import Logo from "component/Logo";
+import Search from "component/Search";
+import SwitherTheme from "component/SwitcherTheme";
 import "./Header.style.scss";
 
 /** @namespace @component/Header/Component */

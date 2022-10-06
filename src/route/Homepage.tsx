@@ -1,8 +1,8 @@
-// import components
-import Products from "@component/Products";
-import Companies from "@component/Companies";
-import Slider from "@component/Slider";
-import Filter from "@component/Filter";
+// Import components
+import Products from "component/Products";
+import Companies from "component/Companies";
+import Slider from "component/Slider";
+import Filter from "component/Filter";
 
 /** @namespace @route/Homepage/Component */
 export default function Homepage() {

@@ -1,13 +1,13 @@
 /* utilities import */
 import { useState } from "react";
-import Streamer from "@util/Streamer";
+import Streamer from "util/Streamer";
 /* assets & styles import */
-import SliderButtons from "@component/SliderButtons";
-import SliderPagination from "@component/SliderPagination";
-import SliderShowcase from "@component/SliderShowcase";
+import SliderButtons from "component/SliderButtons";
+import SliderPagination from "component/SliderPagination";
+import SliderShowcase from "component/SliderShowcase";
 
 import "./InnerSlider.style.scss";
-import data from "@data/InnerSlider.json";
+import data from "data/InnerSlider.json";
 
 /** @namespace @component/InnerSlider/Component */
 export default function InnerSlider() {

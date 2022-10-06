@@ -1,5 +1,5 @@
 /* import assets and styles */
-import comments from "@data/Comments.json";
+import comments from "data/Comments.json";
 import "./Comments.style.scss";
 
 /** @namespace @component/Comments/Component */

@@ -5,7 +5,7 @@ import Select from "react-select";
 import { AiOutlineMenuUnfold, AiOutlineClose } from "react-icons/ai";
 import "./Filter.style.scss";
 
-import genres from "@data/Genres.json";
+import genres from "data/Genres.json";
 import { selectStyles } from "./Filter.config";
 
 /** @namespace @component/Filter/Component */

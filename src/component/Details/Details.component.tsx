@@ -3,7 +3,7 @@ import { useState } from "react";
 /* import assets & styles */
 import { AiFillWindows } from "react-icons/ai";
 import "./Details.style.scss";
-import details from "@data/Details.json";
+import details from "data/Details.json";
 
 /** @namespace @component/Details/Component */
 export default function Details() {

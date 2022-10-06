@@ -1,13 +1,13 @@
 /* utilities import */
 import { useState, useEffect } from "react";
 /* assets & styles import */
-import SliderButtons from "@component/SliderButtons";
-import SliderTitle from "@component/SliderTitle";
-import SliderPagination from "@component/SliderPagination";
-import SliderShowcase from "@component/SliderShowcase";
+import SliderButtons from "component/SliderButtons";
+import SliderTitle from "component/SliderTitle";
+import SliderPagination from "component/SliderPagination";
+import SliderShowcase from "component/SliderShowcase";
 
 import "./Slider.style.scss";
-import data from "@data/HomeSlider.json";
+import data from "data/HomeSlider.json";
 
 /* import constant values */
 import { SLIDER_INTERVAL } from "./Slider.config";

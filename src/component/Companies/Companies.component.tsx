@@ -2,8 +2,8 @@
 import { Link } from "react-router-dom";
 import { SwiperSlide } from "swiper/react";
 /* assets & styles import */
-import Carousel from "@component/Carousel";
-import companies from "@data/Companies.json";
+import Carousel from "component/Carousel";
+import companies from "data/Companies.json";
 import "./Companies.style.scss";
 
 /** @namespace @component/Companies/Component */

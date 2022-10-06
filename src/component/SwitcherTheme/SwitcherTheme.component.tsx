@@ -1,6 +1,6 @@
 /* import assets */
 import { BiSun, BiMoon } from "react-icons/bi";
-import { useTheme, useThemeUpdate } from "@util/ThemeContext";
+import { useTheme, useThemeUpdate } from "util/ThemeContext";
 
 /** @namespace @component/SwitcherTheme/Component */
 export default function SwitcherTheme() {

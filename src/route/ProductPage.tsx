@@ -1,8 +1,8 @@
-// import Slider from '@component/Slider';
-import InnerSlider from "@component/InnerSlider";
-import Details from "@component/Details";
-import Products from "@component/Products";
-import Comments from "@component/Comments";
+// import Slider from 'component/Slider';
+import InnerSlider from "component/InnerSlider";
+import Details from "component/Details";
+import Products from "component/Products";
+import Comments from "component/Comments";
 
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";

@@ -1,16 +1,16 @@
 /* utilities import */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useTheme } from "@util/ThemeContext";
+import { useTheme } from "util/ThemeContext";
 
 /* default styles import */
-import "@style/main.scss";
+import "style/main.scss";
 
 /* page & layout imports */
-import Header from "@component/Header";
-import Footer from "@component/Footer";
-import Homepage from "@route/Homepage";
-import ProductPage from "@route/ProductPage";
-import FilterPage from "@route/FilterPage";
+import Header from "component/Header";
+import Footer from "component/Footer";
+import Homepage from "route/Homepage";
+import ProductPage from "route/ProductPage";
+import FilterPage from "route/FilterPage";
 
 export default function App() {
   return (
