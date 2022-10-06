@@ -1,7 +1,7 @@
-@import "./abstract/reset";
-@import "./abstract/fonts";
-@import "./abstract/variables";
-@import "./abstract/inputs";
+@forward 'abstract/fonts';
+@forward 'abstract/reset';
+@forward 'abstract/variables';
+@forward 'abstract/inputs';
 
 body {
   .App {
