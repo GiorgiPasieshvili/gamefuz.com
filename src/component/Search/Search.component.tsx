@@ -8,7 +8,7 @@ export default function Search() {
     <div className="search">
       <div className="search__bar">
         <input className="search__input" type="text" placeholder="Search.." />
-        <button className="search__button icon">
+        <button className="search__icon icon">
           <BiSearch />
         </button>
       </div>
