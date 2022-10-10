@@ -4,44 +4,44 @@
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto 1fr;
-  gap: 0 28px;
+  gap: 0 1.75rem;
 
   aside {
     grid-row: 1/4;
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 0.56rem;
   }
 
   header {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 0.63rem;
   }
 
   main {
     section {
-      margin-bottom: 19px;
+      margin-bottom: 1.2rem;
     }
   }
 
   footer {
-    align-self: end;
-    padding: 20px;
-    border-radius: 6px;
-    color: var(--color-details-dark-bg);
+    padding: 1.25rem;
     background: var(--color-backgrounds);
+    color: var(--color-details-dark-bg);
+    border-radius: 0.38rem;
+    align-self: end;
   }
 
   /* Aside */
   &__picture {
-    width: 285px;
-    height: 415px;
-    border-radius: 6px;
+    width: 17.8rem;
+    height: 25.9rem;
+    border-radius: 0.38rem;
   }
 
   &__download {
-    font: 23px var(--font-details);
-    height: 50px;
+    height: 3.13rem;
+    font: 1.43rem var(--font-details);
   }
 
   /* Header */
@@ -49,52 +49,51 @@
     font-family: var(--font-default);
 
     span {
-      font-size: 27px;
-      margin-left: 6px;
+      font-size: 1.69rem;
+      margin-left: 0.38rem;
       color: var(--color-primary);
     }
 
     &--big {
-      font-size: 40px;
+      font-size: 2.5rem;
     }
 
     &--small {
-      font-size: 25px;
+      font-size: 1.56rem;
     }
   }
 
   &__icon {
     position: absolute;
-    right: 0;
     top: 0;
+    right: 0;
 
     svg {
-      font-size: 96px;
+      font-size: 6rem;
     }
   }
 
   /* Main */
   &__paragraph {
-    font-size: 18px;
+    font-size: 1.13rem;
   }
 
   &__list {
-    font-size: 20px;
     display: flex;
     flex-direction: column;
     text-transform: capitalize;
+    font-size: 1.25rem;
 
     span {
-      font-size: 18px;
-      margin-left: 4px;
-      // color: var(--color-details-dark-bg);
+      font-size: 1.13rem;
+      margin-left: 0.25rem;
     }
 
     &--secondary {
-      height: 65px;
       display: none;
       flex-wrap: wrap;
-      gap: 2px;
+      height: 4.06rem;
+      gap: 0.125rem;
 
       li {
         width: 50%;
