@@ -1,6 +1,7 @@
 /* utilities import */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useTheme } from "util/ThemeContext";
+import ScrollToTop from "util/SrollToTop";
 
 /* default styles import */
 import "style/main.scss";
@@ -19,9 +20,11 @@ export default function App() {
         <Header />
         <main className="main">
           <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="product/:id" element={<ProductPage />} />
-            <Route path="filter/:id" element={<FilterPage />} />
+            <ScrollToTop>
+              <Route path="/" element={<Homepage />} />
+              <Route path="product/:id" element={<ProductPage />} />
+              <Route path="filter/:id" element={<FilterPage />} />
+            </ScrollToTop>
           </Routes>
         </main>
         <Footer />
