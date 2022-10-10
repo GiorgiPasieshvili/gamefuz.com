@@ -3,110 +3,154 @@
 @forward "abstract/variables";
 @forward "abstract/inputs";
 
-body {
-  .app {
-    font-family: var(--font-default);
-    color: var(--color-details);
-    background: var(--color-body);
+.app {
+  font-family: var(--font-default);
+  color: var(--color-details);
+  background: var(--color-body);
+}
+
+.dark {
+  --color-body: var(--color-primary-dark);
+  --color-backgrounds: var(--color-primary-darker);
+  --color-details: var(--color-primary-lighter);
+  --color-details-dark-bg: var(--color-primary-lighter);
+
+  --slider-image-opacity: 0.4;
+  --slider-counter-opacity: 0.75;
+
+  --textarea-border-color: var(--color-primary-light);
+  --textarea-down-bg-color: var(--color-secondary-darker);
+}
+
+.main {
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 84rem;
+  margin: 0 auto;
+}
+
+.section {
+  margin-top: 2rem;
+
+  &__header {
+    margin-bottom: 1.25rem;
   }
 
-  .dark {
-    --color-body: var(--color-primary-dark);
-    --color-backgrounds: var(--color-primary-darker);
-    --color-details: var(--color-primary-lighter);
-    --color-details-dark-bg: var(--color-primary-lighter);
+  &__title {
+    font-size: 2rem;
+  }
+}
 
-    --slider-image-opacity: 0.4;
-    --slider-counter-opacity: 0.75;
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    --textarea-border-color: var(--color-primary-light);
-    --textarea-down-bg-color: var(--color-secondary-darker);
+  width: 2.63rem;
+  height: 2.63rem;
+  border-radius: 50%;
+
+  background: var(--color-primary);
+  color: #fff;
+
+  opacity: 0.4;
+  transition: 0.4s;
+
+  svg {
+    font-size: 1.4rem;
   }
 
-  .main {
-    padding: 2rem 0;
+  &:hover {
+    opacity: 1;
+    transform: scale(0.9);
   }
+}
 
-  .container {
-    max-width: 84rem;
-    margin: 0 auto;
+.primary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--color-primary);
+  color: #fff;
+
+  border-radius: 0.38rem;
+  opacity: 0.9;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 1;
   }
+}
 
-  .section {
-    margin-top: 2rem;
+.mini-buttons {
+  display: flex;
+  gap: 0.5rem;
 
-    &__header {
-      margin-bottom: 1.25rem;
-    }
-
-    &__title {
-      font-size: 2rem;
-    }
-  }
-
-  .icon {
+  button {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 2.63rem;
-    height: 2.63rem;
-    border-radius: 50%;
+    width: 3.44rem;
+    height: 1.56rem;
+    background: var(--color-secondary-dark);
 
-    background: var(--color-primary);
-    color: #fff;
-
-    opacity: 0.4;
-    transition: 0.4s;
-
-    svg {
-      font-size: 1.4rem;
-    }
-
-    &:hover {
-      opacity: 1;
-      transform: scale(0.9);
-    }
-  }
-
-  .primary-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: var(--color-primary);
-    color: #fff;
-
+    font: 1.06rem var(--font-details);
+    color: var(--color-primary-lighter);
     border-radius: 0.38rem;
-    opacity: 0.9;
-    transition: 0.2s;
-
-    &:hover {
-      opacity: 1;
-    }
   }
 
-  .mini-buttons {
-    display: flex;
-    gap: 0.5rem;
+  .active {
+    background: var(--color-primary);
+    color: #fff;
+  }
+}
 
-    button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--color-body);
+  transition: all 0.6s ease-out;
+}
 
-      width: 3.44rem;
-      height: 1.56rem;
-      background: var(--color-secondary-dark);
+.preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 1.875rem);
+  left: calc(50% - 1.875rem);
+  border: 6px solid #fff;
+  border-color: var(--color-primary) transparent var(--color-primary) transparent;
+  border-radius: 50%;
+  width: 3.75rem;
+  height: 3.75rem;
+  -webkit-animation: animate-preloader 1.5s linear infinite;
+  animation: animate-preloader 1.5s linear infinite;
+}
 
-      font: 1.06rem var(--font-details);
-      color: var(--color-primary-lighter);
-      border-radius: 0.38rem;
-    }
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
 
-    .active {
-      background: var(--color-primary);
-      color: #fff;
-    }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
