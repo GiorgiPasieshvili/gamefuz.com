@@ -1,9 +1,9 @@
 /* import assets & styles */
 import { AiFillAndroid } from "react-icons/ai";
-import "./Switcher.style.scss";
+import "./PlatformMenu.style.scss";
 
-/** @namespace @component/Switcher/Component */
-export default function Switcher() {
+/** @namespace @component/PlatformMenu/Component */
+export default function PlatformMenu() {
   return (
     <div className="switcher">
       <button className="switcher__button icon">

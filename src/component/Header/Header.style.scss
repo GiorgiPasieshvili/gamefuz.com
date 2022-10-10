@@ -4,11 +4,20 @@
   top: 0;
   z-index: 1;
 
+  .logo {
+    opacity: .4;
+    transition: .4s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 25px 0;
   }
 
   &__menu {

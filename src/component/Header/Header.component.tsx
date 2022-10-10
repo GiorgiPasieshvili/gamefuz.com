@@ -1,7 +1,7 @@
 /* import assets & styles */
 import Logo from "component/Logo";
 import Search from "component/Search";
-import SwitherTheme from "component/SwitcherTheme";
+import ThemeToggle from "component/ThemeToggle";
 import "./Header.style.scss";
 
 /** @namespace @component/Header/Component */
@@ -12,7 +12,7 @@ export default function Header() {
         <Logo />
         <div className="header__menu">
           <Search />
-          <SwitherTheme />
+          <ThemeToggle />
         </div>
       </div>
     </header>

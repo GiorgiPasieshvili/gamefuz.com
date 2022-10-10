@@ -1,7 +1,5 @@
 .inner-slider {
   height: 685px;
-  margin: -32px 0 0;
-  padding: 85px 0 30px;
   background: linear-gradient(
     109.6deg,
     rgb(36, 45, 57) 11.2%,
@@ -9,12 +7,8 @@
     rgb(0, 0, 0) 98.6%
   );
 
-  .container {
-    position: relative;
-    height: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-  }
+  margin: -32px 0 0;
+  position: relative;
 
   &__video {
     position: absolute;

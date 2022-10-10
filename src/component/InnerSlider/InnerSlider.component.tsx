@@ -53,40 +53,38 @@ export default function InnerSlider() {
 
   return (
     <div className="inner-slider">
-      <div className="container">
-        <SliderShowcase data={images} current={currentSlide} />
+      <SliderShowcase data={images} current={currentSlide} />
 
-        <Streamer
-          className={`inner-slider__video ${
-            isVideoActive ? "inner-slider__video--active" : ""
-          }`}
-          videoId={video}
-          isVideoActive={isVideoActive}
-          disableVideo={disableVideo}
-        />
+      <Streamer
+        className={`inner-slider__video ${
+          isVideoActive ? "inner-slider__video--active" : ""
+        }`}
+        videoId={video}
+        isVideoActive={isVideoActive}
+        disableVideo={disableVideo}
+      />
 
-        <SliderButtons
-          isVideoActive={isVideoActive}
-          isLastSlide={currentSlide === images.length - 1}
-          prevSlide={prevSlide}
-          nextSlide={nextSlide}
-        />
-        {!isVideoActive && (
-          <footer className="inner-slider__footer">
-            <img
-              className="inner-slider__icon"
-              src="/images/youtube.png"
-              alt="youtube"
-              onClick={enableVideo}
-            />
-            <SliderPagination
-              data={images}
-              current={currentSlide}
-              slideClick={slideClick}
-            />
-          </footer>
-        )}
-      </div>
+      <SliderButtons
+        isVideoActive={isVideoActive}
+        isLastSlide={currentSlide === images.length - 1}
+        prevSlide={prevSlide}
+        nextSlide={nextSlide}
+      />
+      {!isVideoActive && (
+        <footer className="inner-slider__footer">
+          <img
+            className="inner-slider__icon"
+            src="/images/youtube.png"
+            alt="youtube"
+            onClick={enableVideo}
+          />
+          <SliderPagination
+            data={images}
+            current={currentSlide}
+            slideClick={slideClick}
+          />
+        </footer>
+      )}
     </div>
   );
 }

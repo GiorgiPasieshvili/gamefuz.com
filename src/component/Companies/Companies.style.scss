@@ -12,11 +12,7 @@
   }
 
   &__link {
-    background: linear-gradient(
-      109.6deg,
-      rgb(51, 64, 80) 11.2%,
-      rgb(21, 48, 77)
-          );
+    background: var(--color-backgrounds);
   }
 
   &__image {

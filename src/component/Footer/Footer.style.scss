@@ -2,13 +2,8 @@
   font-size: 24px;
   padding: 25px 0;
   color: var(--color-primary-lighter);
-  // background: var(--color-backgrounds);
-  background: linear-gradient(
-    109.6deg,
-    rgb(36, 45, 57) 11.2%,
-    rgb(16, 37, 60) 51.2%,
-    rgb(0, 0, 0) 98.6%
-  );
+  background: var(--color-backgrounds);
+
 
   &__container {
     display: flex;
