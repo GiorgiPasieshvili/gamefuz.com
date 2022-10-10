@@ -19,13 +19,13 @@ export default function App() {
       <div className={"App " + useTheme()}>
         <Header />
         <main className="main">
-          <Routes>
-            <ScrollToTop>
+          <ScrollToTop>
+            <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="product/:id" element={<ProductPage />} />
               <Route path="filter/:id" element={<FilterPage />} />
-            </ScrollToTop>
-          </Routes>
+            </Routes>
+          </ScrollToTop>
         </main>
         <Footer />
       </div>
