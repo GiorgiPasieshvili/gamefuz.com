@@ -2,10 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   position: absolute;
+  top: 50%;
   left: 0;
   right: 0;
-  top: 50%;
+  z-index: 1;
   transform: translateY(-50%);
   pointer-events: none;
 
@@ -15,17 +17,25 @@
     pointer-events: all;
 
     svg {
-      font-size: 80px;
+      font-size: 5rem;
       color: var(--color-details-dark-bg);
+    }
+
+    &:first-child {
+      margin-left: -1.5rem;
+    }
+
+    &:last-child {
+      margin-right: -1.5rem;
     }
 
     &:hover {
       opacity: 1;
     }
-  }
 
-  .hide {
-    opacity: 0;
-    pointer-events: none;
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 }

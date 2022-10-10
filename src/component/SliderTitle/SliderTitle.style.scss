@@ -1,21 +1,27 @@
 .slider-title {
   a {
-    display: none;
+    display: flex;
     align-items: baseline;
+    position: absolute;
+
+    transition: 0.3s;
+    visibility: hidden;
+    opacity: 0;
 
     h3 {
-      font-size: 45px;
-      margin-right: 6px;
+      font-size: 2.8rem;
+      margin-right: 0.38rem;
       color: var(--color-details-dark-bg);
     }
 
     span {
-      font-size: 33px;
+      font-size: 2.06rem;
       color: var(--color-primary);
     }
-  }
 
-  .active {
-    display: flex;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
   }
 }

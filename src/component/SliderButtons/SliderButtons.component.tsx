@@ -6,11 +6,11 @@ import "./SliderButtons.style.scss";
 export default function SliderButtons({ isLastSlide, isVideoActive, prevSlide, nextSlide }: any) {
   return (
     <div className="slider-buttons">
-      <button className={isVideoActive ? "hide" : ""} onClick={prevSlide}>
+      <button className={isVideoActive ? "hidden" : ""} onClick={prevSlide}>
         <BsChevronCompactLeft />
       </button>
 
-      <button className={isLastSlide ? "hide" : ""} onClick={nextSlide}>
+      <button className={isLastSlide ? "hidden" : ""} onClick={nextSlide}>
         <BsChevronCompactRight />
       </button>
     </div>

@@ -1,26 +1,22 @@
 .slider-pagination {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
 
   img {
-    width: 60px;
-    height: 60px;
-    border-radius: 5px;
+    width: 3.75rem;
+    height: 3.75rem;
 
-    opacity: var(--slider-counter-opacity);
-    border: 2px solid transparent;
-    transition: 0.6s;
+    border-radius: 0.32rem;
+    border: 0.125rem solid transparent;
     cursor: pointer;
 
-    &:hover {
+    transition: 0.4s;
+    opacity: var(--slider-counter-opacity);
+
+    &:hover,
+    &.active {
       border-color: var(--color-primary);
-      transition: 0.1s;
       opacity: 1;
     }
-  }
-
-  .active {
-    border-color: var(--color-primary);
-    opacity: 1;
   }
 }

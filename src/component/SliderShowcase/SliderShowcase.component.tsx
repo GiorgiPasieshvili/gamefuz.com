@@ -1,5 +1,4 @@
 /* import assets & styles */
-
 import "./SliderShowcase.style.scss";
 
 /** @namespace @component/SliderShowcase/Component */
