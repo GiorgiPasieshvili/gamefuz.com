@@ -8,23 +8,23 @@
   --font-secondary: #{$font-mkafio};
   --font-details: #{$font-familjen};
 
-  --color-primary: #e4aa53;
-  --color-primary-dark: #1c1c22;
-  --color-primary-darker: #17171c;
-  --color-primary-light: #707070;
-  --color-primary-lighter: #d7d7d7;
-  --color-secondary-dark: #353535;
+  --color-primary: hsl(36, 73%, 61%);
+  --color-primary-dark: hsl(240, 10%, 12%);
+  --color-primary-darker: hsl(240, 10%, 10%);
+  --color-primary-light: hsl(0, 0%, 44%);
+  --color-primary-lighter: hsl(0, 0%, 84%);
+  --color-secondary-dark: hsl(0, 0%, 21%);
   --color-secondary-darker: hsl(240, 10%, 16%);
 
-  --color-body: white;
+  --color-body: hsl(0, 0%, 100%);
   --color-details: var(--color-primary-dark);
   --color-backgrounds: var(--color-primary-dark);
   --color-details-disabled: var(--color-primary-light);
-  --color-details-dark-bg: white;
+  --color-details-dark-bg: hsl(0, 0%, 100%);
 
   --slider-image-opacity: 0;
   --slider-counter-opacity: 1;
 
-  --textarea-border-color: #d8d8d8;
-  --textarea-down-bg-color: #fdfbec;
+  --textarea-border-color: hsl(0, 0%, 85%);
+  --textarea-down-bg-color: hsl(53, 81%, 96%);
 }

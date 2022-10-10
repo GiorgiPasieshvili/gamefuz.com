@@ -16,7 +16,7 @@ import FilterPage from "route/FilterPage";
 export default function App() {
   return (
     <Router>
-      <div className={"App " + useTheme()}>
+      <div className={"app " + useTheme()}>
         <Header />
         <main className="main">
           <ScrollToTop>

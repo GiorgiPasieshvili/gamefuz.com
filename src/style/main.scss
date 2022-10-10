@@ -4,7 +4,7 @@
 @forward "abstract/inputs";
 
 body {
-  .App {
+  .app {
     font-family: var(--font-default);
     color: var(--color-details);
     background: var(--color-body);
@@ -24,42 +24,43 @@ body {
   }
 
   .main {
-    padding: 32px 0;
+    padding: 2rem 0;
   }
 
   .container {
-    max-width: 1350px;
+    max-width: 84rem;
     margin: 0 auto;
   }
 
   .section {
-    margin-top: 32px;
+    margin-top: 2rem;
 
     &__header {
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
     }
 
     &__title {
-      font-size: 32px;
+      font-size: 2rem;
     }
   }
 
   .icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color: #fff;
+    width: 2.63rem;
+    height: 2.63rem;
+    border-radius: 50%;
+
     background: var(--color-primary);
+    color: #fff;
+
     opacity: 0.4;
     transition: 0.4s;
 
     svg {
-      font-size: 22px;
+      font-size: 1.4rem;
     }
 
     &:hover {
@@ -73,9 +74,10 @@ body {
     justify-content: center;
     align-items: center;
 
-    color: white;
     background: var(--color-primary);
-    border-radius: 6px;
+    color: #fff;
+
+    border-radius: 0.38rem;
     opacity: 0.9;
     transition: 0.2s;
 
@@ -86,24 +88,25 @@ body {
 
   .mini-buttons {
     display: flex;
-    gap: 8px;
+    gap: 0.5rem;
 
     button {
-      font: 17px var(--font-details);
-      width: 55px;
-      height: 25px;
-      border-radius: 6px;
-
       display: flex;
       justify-content: center;
       align-items: center;
 
-      color: var(--color-primary-lighter);
+      width: 3.44rem;
+      height: 1.56rem;
       background: var(--color-secondary-dark);
+
+      font: 1.06rem var(--font-details);
+      color: var(--color-primary-lighter);
+      border-radius: 0.38rem;
     }
+
     .active {
-      color: white;
       background: var(--color-primary);
+      color: #fff;
     }
   }
 }

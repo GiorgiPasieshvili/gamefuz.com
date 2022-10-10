@@ -3,15 +3,18 @@ input[type="range"] {
   width: 100%;
   background: none;
 }
+
 input[type="range"]:focus {
   outline: none;
 }
+
 input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 7px;
   background: var(--color-secondary-dark);
   border-radius: 32px;
 }
+
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 17px;
@@ -22,15 +25,18 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   border: none;
 }
+
 input[type="range"]:focus::-webkit-slider-runnable-track {
   background: var(--color-secondary-dark);
 }
+
 input[type="range"]::-moz-range-track {
   width: 100%;
   height: 8px;
   background: var(--color-secondary-dark);
   border-radius: 32px;
 }
+
 input[type="range"]::-moz-range-thumb {
   width: 17px;
   height: 17px;
@@ -39,6 +45,7 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
   border: none;
 }
+
 input[type="range"]::-ms-track {
   width: 100%;
   height: 7px;
@@ -48,14 +55,17 @@ input[type="range"]::-ms-track {
   border-width: 16px 0;
   color: transparent;
 }
+
 input[type="range"]::-ms-fill-lower {
   background: var(--color-secondary-dark);
   border-radius: 32px;
 }
+
 input[type="range"]::-ms-fill-upper {
   background: var(--color-secondary-dark);
   border-radius: 32px;
 }
+
 input[type="range"]::-ms-thumb {
   height: 17px;
   width: 17px;
@@ -63,9 +73,11 @@ input[type="range"]::-ms-thumb {
   background: var(--color-primary);
   cursor: pointer;
 }
+
 input[type="range"]:focus::-ms-fill-lower {
   background: var(--color-secondary-dark);
 }
+
 input[type="range"]:focus::-ms-fill-upper {
   background: var(--color-secondary-dark);
 }
