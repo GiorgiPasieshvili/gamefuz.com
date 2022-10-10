@@ -1,3 +1,3 @@
-# frontend for website, made with React.js
+# Search and download the game you want
 
 https://gamefuz.vercel.app/
