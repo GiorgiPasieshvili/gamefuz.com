@@ -1,11 +1,11 @@
-.companies {
+.creators {
   &__item {
     border: 2px solid transparent;
 
     &:hover {
       border-color: var(--color-primary);
 
-      .companies__image {
+      .creators__image {
         transform: scale(1.2);
       }
     }

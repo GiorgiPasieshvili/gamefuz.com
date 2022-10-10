@@ -1,6 +1,6 @@
 // Import components
 import Products from "component/Products";
-import Companies from "component/Companies";
+import Companies from "component/Creators";
 import Slider from "component/Slider";
 import Filter from "component/Filter";
 
@@ -19,13 +19,3 @@ export default function Homepage() {
     </>
   );
 }
-
-// import { useQuery } from '@apollo/client';
-// import { GET_PRODUCTS } from '@query/Products.query';
-
-// const { loading, error, data } = useQuery(GET_PRODUCTS);
-
-// if (loading) return <p>Loading..</p>;
-// if (error) return <p>Error..</p>;
-
-// const { products: { data: products } } = data;
