@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const GET_CREATORS = gql`
   query GetCreators {
-    creators {
+    creators(sort: "updatedAt:desc") {
       data {
         id
         attributes {
