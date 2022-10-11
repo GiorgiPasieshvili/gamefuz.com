@@ -23,7 +23,7 @@ export default function ProductPage() {
       <InnerSlider data={data.product.data} />
       <div className="container">
         <Details data={data.product.data} />
-        <Products type="similar" />
+        <Products title="similar games" type="similar" />
         <Comments />
       </div>
     </>

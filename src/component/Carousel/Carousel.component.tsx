@@ -9,7 +9,7 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import "./Carousel.style.scss";
 
 /** @namespace @section/Products/Component */
-export default function Carousel({ title, height, slides, children }: any) {
+export default function Carousel({ title, height, slides, children, loop }: any) {
   const [prevRef, setPrevRef] = useState<any>(null);
   const [nextRef, setNextRef] = useState<any>(null);
 
@@ -43,7 +43,7 @@ export default function Carousel({ title, height, slides, children }: any) {
         spaceBetween={6}
         slidesPerView={slides}
         slidesPerGroup={slides}
-        loop={true}
+        loop={loop}
       >
         {children}
       </Swiper>

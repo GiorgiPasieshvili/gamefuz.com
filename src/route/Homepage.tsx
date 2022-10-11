@@ -11,10 +11,10 @@ export default function Homepage() {
       <Slider />
       <Filter />
       <div className="container">
-        <Products type="top" />
-        <Products type="recent" />
+        <Products title="top games" type="top" />
+        <Products title="recent games" type="recent" />
         <Companies />
-        <Products type="trailers" />
+        <Products title="trailers" type="trailers" />
       </div>
     </>
   );
