@@ -5,24 +5,64 @@ import Select from "react-select";
 import { AiOutlineMenuUnfold, AiOutlineClose } from "react-icons/ai";
 import "./Filter.style.scss";
 
-import genres from "data/Genres.json";
 import { selectStyles } from "./Filter.config";
+
+import { useQuery } from "@apollo/client";
+import { GET_ALL_GENRES } from "query/AllGenres.query";
+import { GET_ALL_CREATORS } from "query/AllCreators.query";
 
 /** @namespace @component/Filter/Component */
 export default function Filter() {
   const [isFilterOpen, setFilterOpen] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState<any>(null);
-  const [activeLangButton, setActiveLangButton] = useState(0);
+  const [selectedCreator, setSelectedCreator] = useState<any>(null);
+  const [activeIntLangButton, setActiveIntLangButton] = useState(0);
+  const [activeDubLangButton, setActiveDubLangButton] = useState(0);
 
   const toggleFilter = () => {
     setFilterOpen((isFilterOpen) => !isFilterOpen);
   };
 
-  const onLangButtonClick = (e: any) => {
+  const onIntLangButtonClick = (e: any) => {
     e.preventDefault();
     const btnIndex = e.target.dataset.indexNumber;
-    setActiveLangButton(Number(btnIndex));
+    setActiveIntLangButton(Number(btnIndex));
   };
+
+  const onDubLangButtonClick = (e: any) => {
+    e.preventDefault();
+    const btnIndex = e.target.dataset.indexNumber;
+    setActiveDubLangButton(Number(btnIndex));
+  };
+
+  const handleFilterButtonClick = (e: any) => {
+    e.preventDefault();
+  };
+
+  const {
+    loading: genresLoading,
+    error: genresError,
+    data: genresData,
+  } = useQuery(GET_ALL_GENRES);
+  const {
+    loading: creatorsLoading,
+    error: creatorsError,
+    data: creatorsData,
+  } = useQuery(GET_ALL_CREATORS);
+
+  if (genresLoading || creatorsLoading)
+    return <div className="preloader"></div>;
+  if (genresError || creatorsError) return <p>Error..</p>;
+
+  const genresList = genresData.genres.data.map((item: any) => ({
+    value: item.attributes.title,
+    label: item.attributes.title,
+  }));
+
+  const creatorsList = creatorsData.creators.data.map((item: any) => ({
+    value: item.attributes.title,
+    label: item.attributes.title,
+  }));
 
   return (
     <div className="filter-parent">
@@ -47,8 +87,19 @@ export default function Filter() {
             closeMenuOnSelect={false}
             value={selectedGenre}
             onChange={setSelectedGenre}
-            options={genres}
+            options={genresList}
             isMulti
+          />
+
+          {/* select creators */}
+          <label className="filter__label">Creator:</label>
+          <Select
+            className="filter__select"
+            styles={selectStyles}
+            value={selectedCreator}
+            onChange={setSelectedCreator}
+            options={creatorsList}
+            isMulti={false}
           />
 
           {/* choose year */}
@@ -56,34 +107,79 @@ export default function Filter() {
             Year: <span>2020</span>
           </label>
           <input type="range" />
-          {/* choose language */}
 
-          <label className="filter__label">Language:</label>
+          {/* choose interface language */}
+          <label className="filter__label">Interface Language:</label>
           <div className="mini-buttons">
             <button
-              onClick={onLangButtonClick}
+              onClick={onIntLangButtonClick}
               data-index-number={0}
-              className={activeLangButton === 0 ? "active" : ""}
+              className={activeIntLangButton === 0 ? "active" : ""}
             >
               Eng
             </button>
             <button
-              onClick={onLangButtonClick}
+              onClick={onIntLangButtonClick}
               data-index-number={1}
-              className={activeLangButton === 1 ? "active" : ""}
+              className={activeIntLangButton === 1 ? "active" : ""}
             >
               Rus
             </button>
             <button
-              onClick={onLangButtonClick}
+              onClick={onIntLangButtonClick}
               data-index-number={2}
-              className={activeLangButton === 2 ? "active" : ""}
+              className={activeIntLangButton === 2 ? "active" : ""}
+            >
+              Both
+            </button>
+            <button
+              onClick={onIntLangButtonClick}
+              data-index-number={3}
+              className={activeIntLangButton === 3 ? "active" : ""}
             >
               Multi
             </button>
           </div>
 
-          <button className="filter__button primary-button">Filter</button>
+          {/* choose dubbing language */}
+          <label className="filter__label">Dubbing Language:</label>
+          <div className="mini-buttons">
+            <button
+              onClick={onDubLangButtonClick}
+              data-index-number={0}
+              className={activeDubLangButton === 0 ? "active" : ""}
+            >
+              Eng
+            </button>
+            <button
+              onClick={onDubLangButtonClick}
+              data-index-number={1}
+              className={activeDubLangButton === 1 ? "active" : ""}
+            >
+              Rus
+            </button>
+            <button
+              onClick={onDubLangButtonClick}
+              data-index-number={2}
+              className={activeDubLangButton === 2 ? "active" : ""}
+            >
+              Both
+            </button>
+            <button
+              onClick={onDubLangButtonClick}
+              data-index-number={3}
+              className={activeDubLangButton === 3 ? "active" : ""}
+            >
+              Multi
+            </button>
+          </div>
+
+          <button
+            onClick={handleFilterButtonClick}
+            className="filter__button primary-button"
+          >
+            Filter
+          </button>
         </form>
       </aside>
     </div>

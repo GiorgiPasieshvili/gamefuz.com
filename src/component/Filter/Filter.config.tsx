@@ -25,4 +25,9 @@ export const selectStyles = {
 
     return { ...provided, color };
   },
+  singleValue: (base: any, state: any) => {
+    const color = "white";
+
+    return { ...base, color };
+  },
 };
