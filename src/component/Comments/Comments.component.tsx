@@ -1,6 +1,32 @@
 /* import assets and styles */
-import comments from "data/Comments.json";
 import "./Comments.style.scss";
+
+const comments = [
+  {
+    name: "levan",
+    surname: "kobiashvili",
+    pic: "/images/people/levan.jpg",
+    comment: "Dzalian kargi tamashia, vertobit mteli ojaxi !!",
+  },
+  {
+    name: "salome",
+    surname: "manjgaladze",
+    pic: "/images/people/salome.jpg",
+    comment: "Madloba rom dadet <33 umagresi tamashia !!",
+  },
+  {
+    name: "nini",
+    surname: "margoshvili",
+    pic: "/images/people/nini.jpg",
+    comment: "Amis dadebas rame wesieri dagedor! uniwoebi xart !!",
+  },
+  {
+    name: "maria",
+    surname: "rojersi",
+    pic: "/images/people/maria.jpg",
+    comment: "momwons aseti stilis tamashebi, ase ganagrdzet <3",
+  },
+];
 
 /** @namespace @component/Comments/Component */
 export default function Comments() {
