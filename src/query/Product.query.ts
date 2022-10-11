@@ -8,7 +8,7 @@ export const GET_PRODUCT = gql`
         attributes {
           title
           release
-          video_link
+          video
           download {
             data {
               attributes {
@@ -28,6 +28,22 @@ export const GET_PRODUCT = gql`
               id
               attributes {
                 url
+              }
+            }
+          }
+          creators {
+            data {
+              id
+              attributes {
+                title
+              }
+            }
+          }
+          genres {
+            data {
+              id
+              attributes {
+                title
               }
             }
           }

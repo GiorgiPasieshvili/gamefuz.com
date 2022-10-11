@@ -15,7 +15,7 @@ export const GET_SLIDER = gql`
               }
             }
           }
-          thumbnail_square {
+          minithumb {
             data {
               attributes {
                 url

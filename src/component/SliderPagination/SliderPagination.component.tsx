@@ -19,7 +19,7 @@ export default function SliderPagination({
           src={
             isInner
               ? item.attributes.url
-              : item.attributes.thumbnail_square.data.attributes.url
+              : item.attributes.minithumb.data.attributes.url
           }
           alt={isInner ? item.id : item.attributes.title}
         />

@@ -12,7 +12,7 @@ export default function Details({ data }: any) {
     const buttonIndex = e.target.dataset.indexNumber;
     setActiveButton(Number(buttonIndex));
   };
-
+  
   return (
     <article className="details section">
       <aside>
@@ -50,23 +50,27 @@ export default function Details({ data }: any) {
           <ul className="details__list">
             <li>
               Genre:
-              {/* {categories.map((category, index) => (
+              {data.attributes.genres.data.map((item: any, index: number) => (
                 <span className="details__comma" key={index}>
-                  {category}
+                  {item.attributes.title}
                 </span>
-              ))} */}
+              ))}
             </li>
             <li>
               Creator:
-              {/* <span>{company}</span> */}
+              {data.attributes.creators.data.map((item: any, index: number) => (
+                <span className="details__comma" key={index}>
+                  {item.attributes.title}
+                </span>
+              ))}
             </li>
             <li>
               Interface Language: {""}
-              {data.attributes.interface_lang}
+              {data.attributes.interface_lang.replaceAll("_", " | ")}
             </li>
             <li>
               Dubbing Language: {""}
-              {data.attributes.dubbing_lang}
+              {data.attributes.dubbing_lang.replaceAll("_", " | ")}
             </li>
             <li>
               Crack:

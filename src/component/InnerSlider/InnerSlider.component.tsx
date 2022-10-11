@@ -84,7 +84,7 @@ export default function InnerSlider({ data }: any) {
 
       <Streamer
         className={`inner-slider__video ${isVideoActive ? "active" : ""}`}
-        videoId={data.attributes.video_link}
+        videoId={data.attributes.video}
         isVideoActive={isVideoActive}
         disableVideo={disableVideo}
       />
