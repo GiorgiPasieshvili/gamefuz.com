@@ -1,6 +1,12 @@
+@use "style/abstract/mixins" as mix;
+
 .logo {
-  opacity: 0.4;
+  opacity: 0.7;
   transition: 0.4s;
+
+  @include mix.mobile {
+    max-width: 12rem;
+  }
 
   &:hover {
     opacity: 1;

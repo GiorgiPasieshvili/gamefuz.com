@@ -1,3 +1,5 @@
+@use "style/abstract/mixins" as mix;
+
 .slider-title {
   a {
     display: flex;
@@ -8,15 +10,28 @@
     visibility: hidden;
     opacity: 0;
 
+    @include mix.mobile {
+      font-size: 1.8rem;
+      bottom: 4rem;
+    }
+
     h3 {
       font-size: 2.8rem;
       margin-right: 0.38rem;
       color: var(--color-details-dark-bg);
+
+      @include mix.mobile {
+        font-size: 1.8rem;
+      }
     }
 
     span {
       font-size: 2.06rem;
       color: var(--color-primary);
+
+      @include mix.mobile {
+        font-size: 1.56rem;
+      }
     }
 
     &.active {

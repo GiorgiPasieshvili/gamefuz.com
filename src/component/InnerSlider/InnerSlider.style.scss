@@ -1,7 +1,13 @@
+@use "style/abstract/mixins" as mix;
+
 .inner-slider {
   height: 42.8rem;
   margin-top: -2rem;
   position: relative;
+
+  @include mix.mobile {
+    height: 30rem;
+  }
 
   .container {
     height: 100%;

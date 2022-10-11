@@ -9,7 +9,13 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import "./Carousel.style.scss";
 
 /** @namespace @section/Products/Component */
-export default function Carousel({ title, height, slides, children, loop }: any) {
+export default function Carousel({
+  title,
+  height,
+  slides,
+  children,
+  loop,
+}: any) {
   const [prevRef, setPrevRef] = useState<any>(null);
   const [nextRef, setNextRef] = useState<any>(null);
 
@@ -41,8 +47,36 @@ export default function Carousel({ title, height, slides, children, loop }: any)
         className="carousel-content"
         style={{ height: height }}
         spaceBetween={6}
-        slidesPerView={slides}
-        slidesPerGroup={slides}
+        slidesPerView={slides * 2}
+        slidesPerGroup={2}
+        breakpoints={{
+          600: {
+            slidesPerView: slides * 3,
+            slidesPerGroup: 3,
+          },
+          720: {
+            slidesPerView: slides * 3.5,
+          },
+          840: {
+            slidesPerView: slides * 4,
+            slidesPerGroup: 4,
+          },
+          960: {
+            slidesPerView: slides * 5,
+            slidesPerGroup: 5,
+          },
+          1080: {
+            slidesPerView: slides * 5.5,
+          },
+          1200: {
+            slidesPerView: slides * 6,
+            slidesPerGroup: 6,
+          },
+          1320: {
+            slidesPerView: slides * 7,
+            slidesPerGroup: 7,
+          },
+        }}
         loop={loop}
       >
         {children}
