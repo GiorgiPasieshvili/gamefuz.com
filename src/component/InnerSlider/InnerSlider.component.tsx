@@ -7,17 +7,15 @@ import SliderPagination from "component/SliderPagination";
 import SliderShowcase from "component/SliderShowcase";
 
 import "./InnerSlider.style.scss";
-import data from "data/InnerSlider.json";
 
 /** @namespace @component/InnerSlider/Component */
-export default function InnerSlider() {
-  const { images, video } = data[0];
+export default function InnerSlider({ data }: any) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVideoActive, setVideoActive] = useState(true);
 
   // go to the next slide
   const nextSlide = () => {
-    const isLastSlide = currentSlide === images.length - 1;
+    const isLastSlide = currentSlide === data.attributes.images.data.length - 1;
 
     if (isVideoActive) {
       disableVideo();
@@ -56,7 +54,7 @@ export default function InnerSlider() {
       <div className="container">
         <SliderButtons
           isVideoActive={isVideoActive}
-          isLastSlide={currentSlide === images.length - 1}
+          isLastSlide={currentSlide === data.attributes.images.data.length - 1}
           prevSlide={prevSlide}
           nextSlide={nextSlide}
         />
@@ -69,7 +67,8 @@ export default function InnerSlider() {
               onClick={enableVideo}
             />
             <SliderPagination
-              data={images}
+              isInner
+              data={data.attributes.images.data}
               current={currentSlide}
               slideClick={slideClick}
             />
@@ -77,11 +76,15 @@ export default function InnerSlider() {
         )}
       </div>
 
-      <SliderShowcase data={images} current={currentSlide} />
+      <SliderShowcase
+        isInner
+        data={data.attributes.images.data}
+        current={currentSlide}
+      />
 
       <Streamer
         className={`inner-slider__video ${isVideoActive ? "active" : ""}`}
-        videoId={video}
+        videoId={data.attributes.video_link}
         isVideoActive={isVideoActive}
         disableVideo={disableVideo}
       />

@@ -3,20 +3,25 @@ import { Link } from "react-router-dom";
 import { SwiperSlide } from "swiper/react";
 /* assets & styles import */
 import Carousel from "component/Carousel";
-import products from "data/Products.json";
 import "./Products.style.scss";
+
+import { useQuery } from "@apollo/client";
+import { GET_RECENT_PRODUCTS } from "query/RecentProducts.query";
 
 /** @namespace @component/Products/Component */
 export default function Products({ type }: { type: string }) {
-  const { title, content } = products.filter((item) => item.type === type)[0];
+  const { loading, error, data } = useQuery(GET_RECENT_PRODUCTS);
+
+  if (loading) return <div className="preloader"></div>;
+  if (error) return <p>Error..</p>;
 
   return (
     <section className="products section">
-      <Carousel title={title} height={280} slides={7}>
-        {content.map(({ id, title, image }) => (
-          <SwiperSlide className="products__item" key={id}>
-            <Link className="products__link" to={"/product/" + id}>
-              <img className="products__image" src={image} alt={title} />
+      <Carousel title={"Recent Games" || "title"} height={280} slides={7}>
+        {data.products.data.map((item: any) => (
+          <SwiperSlide className="products__item" key={item.id}>
+            <Link className="products__link" to={"/product/" + item.id}>
+              <img className="products__image" src={item.attributes.thumbnail.data.attributes.url} alt={item.attributes.title} />
             </Link>
           </SwiperSlide>
         ))}

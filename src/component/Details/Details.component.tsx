@@ -3,23 +3,10 @@ import { useState } from "react";
 /* import assets & styles */
 import { AiFillWindows } from "react-icons/ai";
 import "./Details.style.scss";
-import details from "data/Details.json";
 
 /** @namespace @component/Details/Component */
-export default function Details() {
+export default function Details({ data }: any) {
   const [activeButton, setActiveButton] = useState(1);
-  const {
-    title,
-    image,
-    year,
-    categories,
-    company,
-    interface_lang,
-    dubbing_lang,
-    crack,
-    description,
-    specs,
-  } = details[0];
 
   const onButtonClick = (e: any) => {
     const buttonIndex = e.target.dataset.indexNumber;
@@ -29,16 +16,26 @@ export default function Details() {
   return (
     <article className="details section">
       <aside>
-        <img className="details__picture" src={image} alt={title} />
-        <a className="details__download primary-button" href="/product/1">
+        <img
+          className="details__picture"
+          src={data.attributes.thumbnail.data.attributes.url}
+          alt={data.attributes.title}
+        />
+        <a
+          className="details__download primary-button"
+          download
+          target="_blank"
+          rel="noreferrer"
+          href={data.attributes.download.data.attributes.url}
+        >
           Download
         </a>
       </aside>
 
       <header>
         <h2 className="details__heading details__heading--big">
-          {title}
-          <span>{year}</span>
+          {data.attributes.title}
+          <span>{data.attributes.release}</span>
         </h2>
         <div className="details__icon">
           <AiFillWindows />
@@ -53,35 +50,27 @@ export default function Details() {
           <ul className="details__list">
             <li>
               Genre:
-              {categories.map((category, index) => (
+              {/* {categories.map((category, index) => (
                 <span className="details__comma" key={index}>
                   {category}
                 </span>
-              ))}
+              ))} */}
             </li>
             <li>
               Creator:
-              <span>{company}</span>
+              {/* <span>{company}</span> */}
             </li>
             <li>
-              Interface Language:
-              {interface_lang.map((lang, index) => (
-                <span className="details__bar" key={index}>
-                  {lang}
-                </span>
-              ))}
+              Interface Language: {""}
+              {data.attributes.interface_lang}
             </li>
             <li>
-              Dubbing Language:
-              {dubbing_lang.map((lang, index) => (
-                <span className="details__bar" key={index}>
-                  {lang}
-                </span>
-              ))}
+              Dubbing Language: {""}
+              {data.attributes.dubbing_lang}
             </li>
             <li>
               Crack:
-              <span>{crack}</span>
+              <span>{data.attributes.crack}</span>
             </li>
           </ul>
         </section>
@@ -89,7 +78,7 @@ export default function Details() {
           <h3 className="details__heading details__heading--small">
             description:
           </h3>
-          <p className="details__paragraph">{description}</p>
+          <p className="details__paragraph">{data.attributes.description}</p>
         </section>
       </main>
 
@@ -124,27 +113,27 @@ export default function Details() {
         >
           <li>
             OS:
-            <span>{specs.low.os}</span>
+            <span>{data.attributes.low_os}</span>
           </li>
           <li>
             CPU:
-            <span>{specs.low.cpu}</span>
+            <span>{data.attributes.low_cpu}</span>
           </li>
           <li>
             RAM:
-            <span>{specs.low.ram}</span>
+            <span>{data.attributes.low_ram}</span>
           </li>
           <li>
             GPU:
-            <span>{specs.low.gpu}</span>
+            <span>{data.attributes.low_gpu}</span>
           </li>
           <li>
             Sound Card:
-            <span>{specs.low.sound}</span>
+            <span>{data.attributes.low_sound}</span>
           </li>
           <li>
             Free Space:
-            <span>{specs.low.space}</span>
+            <span>{data.attributes.low_space}</span>
           </li>
         </ul>
         {/* best system requirements */}
@@ -155,27 +144,27 @@ export default function Details() {
         >
           <li>
             OS:
-            <span>{specs.best.os}</span>
+            <span>{data.attributes.best_os}</span>
           </li>
           <li>
             CPU:
-            <span>{specs.best.cpu}</span>
+            <span>{data.attributes.best_cpu}</span>
           </li>
           <li>
             RAM:
-            <span>{specs.best.ram}</span>
+            <span>{data.attributes.best_ram}</span>
           </li>
           <li>
             GPU:
-            <span>{specs.best.gpu}</span>
+            <span>{data.attributes.best_gpu}</span>
           </li>
           <li>
             Sound Card:
-            <span>{specs.best.sound}</span>
+            <span>{data.attributes.best_sound}</span>
           </li>
           <li>
             Free Space:
-            <span>{specs.best.space}</span>
+            <span>{data.attributes.best_space}</span>
           </li>
         </ul>
       </footer>

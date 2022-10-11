@@ -43,6 +43,7 @@ export default function Carousel({ title, height, slides, children }: any) {
         spaceBetween={6}
         slidesPerView={slides}
         slidesPerGroup={slides}
+        loop={true}
       >
         {children}
       </Swiper>

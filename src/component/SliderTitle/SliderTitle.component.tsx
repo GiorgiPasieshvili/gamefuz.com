@@ -6,14 +6,14 @@ import "./SliderTitle.style.scss";
 export default function SliderTitle({ data, current }: any) {
   return (
     <div className="slider-title">
-      {data.map(({ title, year, id }: any, index: number) => (
+      {data.map((item: any, index: number) => (
         <Link
           key={index}
-          to={"/product/" + id}
+          to={"/product/" + item.id}
           className={index === current ? "active" : ""}
         >
           <h3>
-            {title} <span>{year}</span>
+            {item.attributes.title} <span>{item.attributes.release}</span>
           </h3>
         </Link>
       ))}
