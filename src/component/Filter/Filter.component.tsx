@@ -78,6 +78,14 @@ export default function Filter() {
             <AiOutlineClose />
           </button>
         </header>
+
+        <div className="filter__auth">
+          <button className="filter__auth-button">Log in</button>
+          <button className="filter__auth-button primary-button">
+            Sign up
+          </button>
+        </div>
+
         <form className="filter__form">
           {/* select genres */}
           <label className="filter__label">Genre:</label>
