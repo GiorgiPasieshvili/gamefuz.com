@@ -1,6 +1,8 @@
 @use "style/abstract/mixins" as mix;
 
 .search {
+  position: relative;
+
   &__bar {
     display: flex;
     align-items: center;
@@ -12,7 +14,7 @@
     position: absolute;
     right: -0.125rem;
 
-    width: 100%;
+    width: 25rem;
     height: 100%;
     padding-left: 2.25rem;
     border-radius: 2.25rem;
@@ -23,7 +25,8 @@
 
     -webkit-backdrop-filter: blur(0.31rem);
     backdrop-filter: blur(0.31rem);
-    transition: 0.6s;
+    transition: 0.3s;
+    visibility: hidden;
     opacity: 0;
 
     &::placeholder {
@@ -37,18 +40,92 @@
     }
   }
 
-  &:hover {
+  &__result {
+    width: 24.8rem;
+    // height: 10rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(0.31rem);
+    backdrop-filter: blur(0.31rem);
+
+    padding: 1rem;
+
+    border-radius: 1.5rem;
+
+    position: absolute;
+    right: 0;
+    top: 3.05rem;
+
+    transition: 0.3s;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.active {
     .search__icon {
       transform: scale(0.9);
     }
 
     .search__input {
-      width: 25rem;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .search__result {
+      visibility: visible;
       opacity: 1;
     }
   }
 
-  // &__result {
+  &__item a {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
 
-  // }
+    transition: 0.3s;
+
+    &:hover {
+      scale: 1.012;
+    }
+
+    img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: .7rem;
+    }
+  }
+
+  &__info {
+    color: black;
+    height: 4rem;
+
+    span {
+      font-size: 1.3rem;
+
+      > span {
+        font-size: 1.1rem;
+        color: #95692a;
+      }
+    }
+
+    p {
+      font-family: var(--font-details);
+      color: #222;
+      height: 2.7rem;
+      // border: 1px solid #222;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    display: block;
+    color: #95692a;
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    &:hover {
+      scale: 1.02;
+    }
+  }
 }
