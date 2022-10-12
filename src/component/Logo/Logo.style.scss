@@ -8,6 +8,10 @@
     max-width: 12rem;
   }
 
+  a {
+    display: flex;
+  }
+
   &:hover {
     opacity: 1;
   }

@@ -1,6 +1,6 @@
 // Import components
 import Products from "component/Products";
-import Companies from "component/Creators";
+import Creators from "component/Creators";
 import Slider from "component/Slider";
 import Filter from "component/Filter";
 
@@ -13,8 +13,8 @@ export default function Homepage() {
       <div className="container">
         <Products title="top games" type="top" />
         <Products title="recent games" type="recent" />
-        <Companies />
-        <Products title="trailers" type="trailers" />
+        <Creators />
+        <Products title="coming soon" type="soon" />
       </div>
     </>
   );

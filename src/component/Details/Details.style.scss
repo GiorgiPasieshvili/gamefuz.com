@@ -18,9 +18,8 @@
     grid-row: 1/4;
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
     @include mix.mobile {
-    width: 19rem;
+      width: 19rem;
     }
   }
 
@@ -56,7 +55,7 @@
     height: 3.5rem;
     font: 1.43rem var(--font-details);
 
-    border-radius: .8rem;
+    border-radius: 0.8rem;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 
