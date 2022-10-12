@@ -20,7 +20,7 @@ export default function Creators() {
       <Carousel title="creators" height={120} slides={0.92}>
         {data.creators.data.map((item: any) => (
           <SwiperSlide className="creators__item" key={item.id}>
-            <Link className="creators__link" to={"/filter/" + item.id}>
+            <Link className="creators__link" to={"/filter?creator=" + item.id}>
               <img
                 className="creators__image"
                 src={item.attributes.logo.data.attributes.url}

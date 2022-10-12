@@ -23,7 +23,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="product/:id" element={<ProductPage />} />
-              <Route path="filter/:id" element={<FilterPage />} />
+              <Route path="filter" element={<FilterPage />} />
             </Routes>
           </ScrollToTop>
         </main>
