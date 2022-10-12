@@ -17,7 +17,7 @@ export default function Products({ title, type }: any) {
 
   return (
     <section className="products section">
-      <Carousel title={title} height={280} slides={1} loop>
+      <Carousel title={title} height={298} slides={1} loop>
         {data.products.data.map((item: any) => (
           <SwiperSlide className="products__item" key={item.id}>
             <Link className="products__link" to={"/product/" + item.id}>

@@ -12,7 +12,7 @@ export default function Details({ data }: any) {
     const buttonIndex = e.target.dataset.indexNumber;
     setActiveButton(Number(buttonIndex));
   };
-  
+
   return (
     <article className="details section">
       <aside>
@@ -65,12 +65,14 @@ export default function Details({ data }: any) {
               ))}
             </li>
             <li>
-              Interface Language: {""}
-              {data.attributes.interface_lang.replaceAll("_", " | ")}
+              Interface Language:
+              <span>
+                {data.attributes.interface_lang.replaceAll("_", " | ")}
+              </span>
             </li>
             <li>
-              Dubbing Language: {""}
-              {data.attributes.dubbing_lang.replaceAll("_", " | ")}
+              Dubbing Language:
+              <span>{data.attributes.dubbing_lang.replaceAll("_", " | ")}</span>
             </li>
             <li>
               Crack:
