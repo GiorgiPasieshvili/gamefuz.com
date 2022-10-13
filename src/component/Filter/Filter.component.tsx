@@ -1,5 +1,6 @@
 /* utilities import */
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Select from "react-select";
 /* assets & style import */
 import { AiOutlineMenuUnfold, AiOutlineClose } from "react-icons/ai";
@@ -14,30 +15,71 @@ import { GET_ALL_CREATORS } from "query/AllCreators.query";
 /** @namespace @component/Filter/Component */
 export default function Filter() {
   const [isFilterOpen, setFilterOpen] = useState(false);
-  const [selectedGenre, setSelectedGenre] = useState<any>(null);
+  const [selectedGenre, setSelectedGenre] = useState<any>([]);
   const [selectedCreator, setSelectedCreator] = useState<any>(null);
-  const [activeIntLangButton, setActiveIntLangButton] = useState(0);
-  const [activeDubLangButton, setActiveDubLangButton] = useState(0);
+  const [activeIntLangButton, setActiveIntLangButton] = useState<any>(0);
+  const [activeDubLangButton, setActiveDubLangButton] = useState<any>(0);
 
-  const toggleFilter = () => {
-    setFilterOpen((isFilterOpen) => !isFilterOpen);
+  const [yearValue, setYearValue] = useState(2010);
+
+  const [url, setUrl] = useState("");
+  const [genresQuery, setGenresQuery] = useState("");
+  const [creatorQuery, setCreatorQuery] = useState("");
+  const [intLangQuery, setIntLangQuery] = useState(`int-lang=0`);
+  const [dubLangQuery, setDubLangQuery] = useState(`dub-lang=0`);
+  const [releaseQuery, setReleaseQuery] = useState(`release=2010`);
+
+  const onGenreChoose = (array: any) => {
+    const valuesArray = array.map((item: any) => item.value);
+    setSelectedGenre(array);
+
+    if (valuesArray.length) {
+      setGenresQuery(`genres=[${valuesArray}]`);
+    } else {
+      setGenresQuery("");
+    }
+  };
+
+  const onCreatorChoose = (object: any) => {
+    setSelectedCreator(object);
+
+    if (object) {
+      setCreatorQuery(`creator=${object.value}`);
+    } else {
+      setCreatorQuery("");
+    }
   };
 
   const onIntLangButtonClick = (e: any) => {
     e.preventDefault();
     const btnIndex = e.target.dataset.indexNumber;
     setActiveIntLangButton(Number(btnIndex));
+
+    setIntLangQuery(`int-lang=${btnIndex}`);
   };
 
   const onDubLangButtonClick = (e: any) => {
     e.preventDefault();
     const btnIndex = e.target.dataset.indexNumber;
     setActiveDubLangButton(Number(btnIndex));
+
+    setDubLangQuery(`dub-lang=${btnIndex}`);
   };
 
-  const handleFilterButtonClick = (e: any) => {
-    e.preventDefault();
+  const onYearSelect = (e: any) => {
+    setYearValue(Number(e.target.value) + 1922);
+    setReleaseQuery(`release=${Number(e.target.value) + 1922}`);
   };
+
+  const toggleFilter = () => {
+    setFilterOpen((isFilterOpen) => !isFilterOpen);
+  };
+
+  useEffect(() => {
+    setUrl(
+      `/filter?${genresQuery}&${creatorQuery}&${releaseQuery}&${intLangQuery}&${dubLangQuery}`
+    );
+  }, [genresQuery, creatorQuery, releaseQuery, intLangQuery, dubLangQuery]);
 
   const {
     loading: genresLoading,
@@ -55,12 +97,12 @@ export default function Filter() {
   if (genresError || creatorsError) return <p>Error..</p>;
 
   const genresList = genresData.genres.data.map((item: any) => ({
-    value: item.attributes.title,
+    value: item.id,
     label: item.attributes.title,
   }));
 
   const creatorsList = creatorsData.creators.data.map((item: any) => ({
-    value: item.attributes.title,
+    value: item.id,
     label: item.attributes.title,
   }));
 
@@ -94,7 +136,7 @@ export default function Filter() {
             styles={selectStyles}
             closeMenuOnSelect={false}
             value={selectedGenre}
-            onChange={setSelectedGenre}
+            onChange={onGenreChoose}
             options={genresList}
             isMulti
           />
@@ -105,16 +147,22 @@ export default function Filter() {
             className="filter__select"
             styles={selectStyles}
             value={selectedCreator}
-            onChange={setSelectedCreator}
+            onChange={onCreatorChoose}
             options={creatorsList}
+            isClearable={true}
             isMulti={false}
           />
 
           {/* choose year */}
           <label className="filter__label">
-            Year: <span>2020</span>
+            Year: <span>{yearValue}+</span>
           </label>
-          <input type="range" />
+          <input
+            value={yearValue - 1922}
+            min={68}
+            onChange={(e) => onYearSelect(e)}
+            type="range"
+          />
 
           {/* choose interface language */}
           <label className="filter__label">Interface Language:</label>
@@ -137,13 +185,6 @@ export default function Filter() {
               onClick={onIntLangButtonClick}
               data-index-number={2}
               className={activeIntLangButton === 2 ? "active" : ""}
-            >
-              Both
-            </button>
-            <button
-              onClick={onIntLangButtonClick}
-              data-index-number={3}
-              className={activeIntLangButton === 3 ? "active" : ""}
             >
               Multi
             </button>
@@ -171,23 +212,13 @@ export default function Filter() {
               data-index-number={2}
               className={activeDubLangButton === 2 ? "active" : ""}
             >
-              Both
-            </button>
-            <button
-              onClick={onDubLangButtonClick}
-              data-index-number={3}
-              className={activeDubLangButton === 3 ? "active" : ""}
-            >
               Multi
             </button>
           </div>
 
-          <button
-            onClick={handleFilterButtonClick}
-            className="filter__button primary-button"
-          >
+          <Link to={url} className="filter__button primary-button">
             Filter
-          </button>
+          </Link>
         </form>
       </aside>
     </div>

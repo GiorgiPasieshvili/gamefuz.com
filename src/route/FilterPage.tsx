@@ -5,12 +5,20 @@ import { GET_FILTERED_PRODUCTS } from "query/FilteredProducts.query";
 
 import Filter from "component/Filter";
 
+const langs = {
+  0: ["eng", "rus-eng", "rus-eng-multi"],
+  1: ["rus", "rus-eng", "rus-eng-multi"],
+  2: ["rus-eng-multi"],
+};
+
 /** @namespace @route/FilterPage/Component */
 export default function FilterPage() {
   const [searchParams] = useSearchParams();
   const genresParam = searchParams.get("genres");
   const creatorParam = searchParams.get("creator");
-  console.log(genresParam);
+  const intLangParam = searchParams.get("int-lang");
+  const dubLangParam = searchParams.get("dub-lang");
+  const releaseParam = searchParams.get("release");
 
   let filters = {};
 
@@ -36,6 +44,33 @@ export default function FilterPage() {
         id: {
           eq: creatorParam,
         },
+      },
+    };
+  }
+
+  if (intLangParam) {
+    filters = {
+      ...filters,
+      interface_lang: {
+        in: langs[intLangParam as keyof object],
+      },
+    };
+  }
+
+  if (dubLangParam) {
+    filters = {
+      ...filters,
+      dubbing_lang: {
+        in: langs[dubLangParam as keyof object],
+      },
+    };
+  }
+
+  if (releaseParam) {
+    filters = {
+      ...filters,
+      release: {
+        gt: Number(releaseParam),
       },
     };
   }
