@@ -105,18 +105,20 @@ export default function FilterPage() {
     <>
       <Filter />
       <div className="container">
-        <div className="filter-grid">
-          {data.products.data.map((item: any) => (
-            <div key={item.id} className="filter-grid__item">
-              <Link className="filter-grid__link" to={"/product/" + item.id}>
-                <img
-                  className="filter-grid__image"
-                  src={item.attributes.thumbnail.data.attributes.url}
-                  alt={item.attributes.title}
-                />
-              </Link>
-            </div>
-          ))}
+        <div className="filter-products-wrapper">
+          <div className="filter-grid">
+            {data.products.data.map((item: any) => (
+              <div key={item.id} className="filter-grid__item">
+                <Link className="filter-grid__link" to={"/product/" + item.id}>
+                  <img
+                    className="filter-grid__image"
+                    src={item.attributes.thumbnail.data.attributes.url}
+                    alt={item.attributes.title}
+                  />
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

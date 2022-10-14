@@ -120,12 +120,15 @@
   }
 }
 
-.filter-grid {
+.filter-products-wrapper {
   min-height: calc(100vh - 13rem);
+  margin-top: 4.5rem;
+}
+
+.filter-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.4rem;
-  margin-top: 4.5rem;
 
   &__item {
     border-radius: 0.8rem;
