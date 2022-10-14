@@ -13,8 +13,7 @@ export default function Carousel({
   title,
   height,
   slides,
-  children,
-  loop,
+  children
 }: any) {
   const [prevRef, setPrevRef] = useState<any>(null);
   const [nextRef, setNextRef] = useState<any>(null);
@@ -77,7 +76,6 @@ export default function Carousel({
             slidesPerGroup: 7,
           },
         }}
-        loop={loop}
       >
         {children}
       </Swiper>
