@@ -4,10 +4,25 @@ import "./Search.style.scss";
 
 import { useState, useEffect } from "react";
 
+import { useQuery } from "@apollo/client";
+import { GET_SEARCHED_PRODUCTS } from "query/SearchedProducts.query";
+
+import { Link } from "react-router-dom";
+
 /** @namespace @component/Search/Component */
 export default function Search() {
   const [inputValue, setInputValue] = useState("");
   const [searchActive, setSearchActive] = useState(false);
+
+  let filters = {
+    title: {
+      containsi: inputValue,
+    },
+  };
+
+  const { error, data } = useQuery(GET_SEARCHED_PRODUCTS, {
+    variables: { filters },
+  });
 
   const onChange = (e: any) => {
     setInputValue(e.target.value);
@@ -36,6 +51,10 @@ export default function Search() {
     };
   }, []);
 
+  if (error) return <p>Error..</p>;
+
+  // if (loading) return <p>...</p>;
+
   return (
     <div className={`search ${searchActive ? "active" : ""}`}>
       <div className="search__bar">
@@ -50,65 +69,40 @@ export default function Search() {
           <BiSearch style={{ pointerEvents: "none" }} />
         </button>
       </div>
-      <div className="search__result">
-        <div className="search__item">
-          <a href="/#">
-            <img src="/images/mini/alanwake.jpg" alt="" />
-            <div className="search__info">
-              <span>
-                Alan Wake - Remastered <span>2021</span>
-              </span>
-              <p>
-                Alan Wake is a bestselling crime fiction author suffering from a
-                two-year stretch of writer's block.
-              </p>
-            </div>
-          </a>
+      {inputValue !== "" && (
+        <div className="search__result">
+          {data &&
+            (data.products.data.length === 0 ? (
+              <h2 className="search__no-product">No Product Found!</h2>
+            ) : (
+              data.products.data.slice(0, 4).map((item: any) => (
+                <div key={item.id} className="search__item">
+                  <Link to={`/product/${item.id}`}>
+                    <div className="search__img">
+                      <img
+                        src={item.attributes.minithumb.data.attributes.url}
+                        alt=""
+                      />
+                    </div>
+                    <div className="search__info">
+                      <span>
+                        {item.attributes.title.slice(0, 30)}{" "}
+                        <span>{item.attributes.release}</span>
+                      </span>
+                      <p>{item.attributes.description.slice(0, 130) + "..."}</p>
+                    </div>
+                  </Link>
+                </div>
+              ))
+            ))}
+
+          {data && data.products.data.length > 4 && (
+            <Link to={`/filter?title=${inputValue}`} className="search__button">
+              Find More...
+            </Link>
+          )}
         </div>
-        <div className="search__item">
-          <a href="/#">
-            <img src="/images/mini/dolmen.png" alt="" />
-            <div className="search__info">
-              <span>
-                Dolmen <span>2020</span>
-              </span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ex
-                exercitationem veritatis. Beatae, ipsa.
-              </p>
-            </div>
-          </a>
-        </div>
-        <div className="search__item">
-          <a href="/#">
-            <img src="/images/mini/eternals.png" alt="" />
-            <div className="search__info">
-              <span>
-                Eternals <span>2019</span>
-              </span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
-                minus mollitia inventore ad.
-              </p>
-            </div>
-          </a>
-        </div>
-        <div className="search__item">
-          <a href="/#">
-            <img src="/images/mini/jedi.png" alt="" />
-            <div className="search__info">
-              <span>
-                Jedi: Fallen Orden <span>2020</span>
-              </span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                exercitationem provident magnam rem ab dolorum?
-              </p>
-            </div>
-          </a>
-        </div>
-        <button className="search__button">Find More...</button>
-      </div>
+      )}
     </div>
   );
 }
