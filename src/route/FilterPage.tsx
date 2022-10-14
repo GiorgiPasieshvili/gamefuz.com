@@ -19,6 +19,7 @@ export default function FilterPage() {
   const intLangParam = searchParams.get("int-lang");
   const dubLangParam = searchParams.get("dub-lang");
   const releaseParam = searchParams.get("release");
+  const titleParam = searchParams.get("title");
 
   let filters = {};
 
@@ -71,6 +72,14 @@ export default function FilterPage() {
       ...filters,
       release: {
         gt: Number(releaseParam),
+      },
+    };
+  }
+
+  if (titleParam) {
+    filters = {
+      title: {
+        containsi: titleParam,
       },
     };
   }
