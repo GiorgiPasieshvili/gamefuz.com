@@ -1,3 +1,3 @@
-# Search and download the game you want
+## Browse all kinds of games and download for free
 
-https://gamefuz.vercel.app/
+https://gamefuz.com/
