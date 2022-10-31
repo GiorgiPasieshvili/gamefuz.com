@@ -1,16 +1,16 @@
 .filter {
   &__toggle {
-    width: 4.69rem;
-    height: 4.69rem;
-    border-radius: 0 0.38rem 0.38rem 0;
+    width: 4.7rem;
+    height: 4.7rem;
+    border-radius: 0 0.4rem 0.4rem 0;
 
     background: var(--color-backgrounds);
     color: #fff;
 
     position: fixed;
+    left: -0.5rem;
     top: 12%;
-    left: -0.625rem;
-    z-index: 10;
+    z-index: 2;
 
     transition: 0.4s;
     opacity: 0.8;
@@ -26,21 +26,22 @@
   }
 
   &__content {
-    width: 21.25rem;
+    width: 21.5rem;
     height: 80vh;
-    min-height: 36rem;
-    padding: 1.56rem;
+    max-height: 45rem;
+    padding: 1.55rem;
 
     font-family: var(--font-details);
     background: var(--color-backgrounds);
 
     position: fixed;
+    left: -21.5rem;
     top: 50%;
-    left: -21.25rem;
-    z-index: 10;
+    z-index: 2;
     transform: translateY(-50%);
 
-    border-radius: 0 0.38rem 0.38rem 0;
+    overflow-y: auto;
+    border-radius: 0 0.4rem 0.4rem 0;
     transition: 0.4s;
 
     &.active {
@@ -55,24 +56,28 @@
   }
 
   &__logo {
-    width: 9.38rem;
-    height: 1.88rem;
+    width: 9.5rem;
+    height: 2rem;
   }
 
   &__close {
-    transform: scale(0.8);
+    transform: scale(0.7);
+    opacity: 0.9;
+
+    &:hover {
+      transform: scale(0.75);
+    }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
-    height: 100%;
   }
 
   &__label {
     display: flex;
     justify-content: space-between;
-    margin: 1.25rem 0 0.63rem;
+    margin: 1.25rem 0 0.65rem;
 
     font-size: 1.25rem;
     color: var(--color-details-dark-bg);
@@ -86,7 +91,7 @@
     height: 3.25rem;
     font-size: 1.25rem;
     transition: 0.3s;
-    margin-top: 7.5rem;
+    margin-top: 6rem;
 
     &:hover {
       transform: scale(1.01);
@@ -101,13 +106,13 @@
 
   &__login,
   &__signup {
-    color: #fff;
     width: 50%;
     padding: 0.75rem 0;
     border-radius: 0.4rem;
     transition: 0.3s;
 
-    font: 1.06rem var(--font-details);
+    font: 1.05rem var(--font-details);
+    color: #fff;
 
     &:first-child {
       background: var(--color-secondary-dark);
