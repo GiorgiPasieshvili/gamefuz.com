@@ -3,7 +3,7 @@
 @forward "abstract/variables";
 @forward "abstract/inputs";
 
-@use "style/abstract/mixins" as mix;
+@use "abstract/mixins" as mix;
 
 .app {
   font-family: var(--font-default);
@@ -126,13 +126,33 @@
 
 .filter-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.4rem;
 
+  @media (min-width: 31em) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 44em) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: 56em) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @media (min-width: 69em) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @media (min-width: 81em) {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
   &__item {
+    aspect-ratio: 2/3;
     border-radius: 0.8rem;
     overflow: hidden;
-    height: 300px;
     border: 2px solid transparent;
 
     &:hover {
