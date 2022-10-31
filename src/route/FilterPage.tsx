@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
+/* Import react utilities */
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+/* Graphql Stuff */
 import { useQuery } from "@apollo/client";
 import { GET_FILTERED_PRODUCTS } from "query/FilteredProducts.query";
 
-import Filter from "component/Filter";
-
-const langs = {
+const SHOULD_SEARCH_LANGS = {
   0: ["eng", "rus-eng", "rus-eng-multi"],
   1: ["rus", "rus-eng", "rus-eng-multi"],
   2: ["rus-eng-multi"],
@@ -13,76 +14,51 @@ const langs = {
 
 /** @namespace @route/FilterPage/Component */
 export default function FilterPage() {
-  const [searchParams] = useSearchParams();
-  const genresParam = searchParams.get("genres");
-  const creatorParam = searchParams.get("creator");
-  const intLangParam = searchParams.get("int-lang");
-  const dubLangParam = searchParams.get("dub-lang");
-  const releaseParam = searchParams.get("release");
-  const titleParam = searchParams.get("title");
+  const [filters, setFilters] = useState({});
+  const { state } = useLocation();
 
-  let filters = {};
+  useEffect(() => {
+    if (state) {
+      setFilters({
+        ...(state.genre &&
+          state.genre.length && {
+            and: state.genre.map((item: any) => ({
+              genres: {
+                id: {
+                  eq: item.value,
+                },
+              },
+            })),
+          }),
 
-  if (genresParam) {
-    const genresArray = JSON.parse(genresParam).map((param: any) => ({
-      genres: {
-        id: {
-          eq: param,
-        },
-      },
-    }));
+        ...(state.creator && {
+          creators: {
+            id: {
+              eq: state.creator.value,
+            },
+          },
+        }),
 
-    filters = {
-      ...filters,
-      and: genresArray,
-    };
-  }
+        ...(state.year && {
+          interface_lang: {
+            in: SHOULD_SEARCH_LANGS[state.interface_lang as keyof object],
+          },
+          dubbing_lang: {
+            in: SHOULD_SEARCH_LANGS[state.dubbing_lang as keyof object],
+          },
+          release: {
+            gt: Number(state.year),
+          },
+        }),
 
-  if (creatorParam) {
-    filters = {
-      ...filters,
-      creators: {
-        id: {
-          eq: creatorParam,
-        },
-      },
-    };
-  }
-
-  if (intLangParam) {
-    filters = {
-      ...filters,
-      interface_lang: {
-        in: langs[intLangParam as keyof object],
-      },
-    };
-  }
-
-  if (dubLangParam) {
-    filters = {
-      ...filters,
-      dubbing_lang: {
-        in: langs[dubLangParam as keyof object],
-      },
-    };
-  }
-
-  if (releaseParam) {
-    filters = {
-      ...filters,
-      release: {
-        gt: Number(releaseParam),
-      },
-    };
-  }
-
-  if (titleParam) {
-    filters = {
-      title: {
-        containsi: titleParam,
-      },
-    };
-  }
+        ...(state.title && {
+          title: {
+            containsi: state.title,
+          },
+        }),
+      });
+    }
+  }, [state]);
 
   const { loading, error, data } = useQuery(GET_FILTERED_PRODUCTS, {
     variables: { filters },
@@ -94,16 +70,14 @@ export default function FilterPage() {
   if (!data.products.data.length) {
     return (
       <>
-        <Filter />
         <div className="container">
           <div
             style={{
               fontSize: "2.5rem",
               marginTop: "6.5rem",
-              height: "calc(100vh - 15rem)",
             }}
           >
-            Games will add soon!
+            Games will be added soon!
           </div>
         </div>
       </>
@@ -112,7 +86,6 @@ export default function FilterPage() {
 
   return (
     <>
-      <Filter />
       <div className="container">
         <div className="filter-products-wrapper">
           <div className="filter-grid">

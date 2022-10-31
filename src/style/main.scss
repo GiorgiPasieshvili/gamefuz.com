@@ -26,6 +26,7 @@
 
 .main {
   padding: 2rem 0;
+  min-height: calc(100vh - 4.5rem);
 }
 
 .container {
@@ -119,9 +120,7 @@
     color: #fff;
   }
 }
-
 .filter-products-wrapper {
-  min-height: calc(100vh - 13rem);
   margin-top: 4.5rem;
 }
 

@@ -1,4 +1,4 @@
-export const selectStyles = {
+export const SELECT_STYLES = {
   option: (base: any, state: any) => ({
     ...base,
     borderBottom: "1px dotted #666",
@@ -31,3 +31,5 @@ export const selectStyles = {
     return { ...base, color };
   },
 };
+
+export const LANGUAGES = ["Eng", "Rus", "Multi"];

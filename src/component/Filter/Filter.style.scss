@@ -1,5 +1,5 @@
 .filter {
-  &-toggle {
+  &__toggle {
     width: 4.69rem;
     height: 4.69rem;
     border-radius: 0 0.38rem 0.38rem 0;
@@ -25,25 +25,27 @@
     }
   }
 
-  width: 21.25rem;
-  height: 80vh;
-  min-height: 36rem;
-  padding: 1.56rem;
+  &__content {
+    width: 21.25rem;
+    height: 80vh;
+    min-height: 36rem;
+    padding: 1.56rem;
 
-  font-family: var(--font-details);
-  background: var(--color-backgrounds);
+    font-family: var(--font-details);
+    background: var(--color-backgrounds);
 
-  position: fixed;
-  top: 50%;
-  left: -21.25rem;
-  z-index: 10;
-  transform: translateY(-50%);
+    position: fixed;
+    top: 50%;
+    left: -21.25rem;
+    z-index: 10;
+    transform: translateY(-50%);
 
-  border-radius: 0 0.38rem 0.38rem 0;
-  transition: 0.4s;
+    border-radius: 0 0.38rem 0.38rem 0;
+    transition: 0.4s;
 
-  &--active {
-    left: 0;
+    &.active {
+      left: 0;
+    }
   }
 
   &__header {
@@ -57,7 +59,7 @@
     height: 1.88rem;
   }
 
-  &__icon {
+  &__close {
     transform: scale(0.8);
   }
 
@@ -80,7 +82,7 @@
     text-transform: capitalize;
   }
 
-  &__button {
+  &__submit {
     height: 3.25rem;
     font-size: 1.25rem;
     transition: 0.3s;
@@ -94,10 +96,11 @@
   &__auth {
     margin-top: 1.3rem;
     display: flex;
-    gap: .6rem;
+    gap: 0.6rem;
   }
 
-  &__auth-button {
+  &__login,
+  &__signup {
     color: #fff;
     width: 50%;
     padding: 0.75rem 0;

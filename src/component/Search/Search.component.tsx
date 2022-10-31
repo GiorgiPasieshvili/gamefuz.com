@@ -8,6 +8,7 @@ import { useQuery } from "@apollo/client";
 import { GET_SEARCHED_PRODUCTS } from "query/SearchedProducts.query";
 
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 /** @namespace @component/Search/Component */
 export default function Search() {
@@ -38,6 +39,16 @@ export default function Search() {
       setSearchActive(false);
     }
   };
+
+  const navigate = useNavigate();
+  
+  const handleFindMore = () => {
+    navigate("/filter", {
+      state: {
+        title: inputValue,
+      },
+    });
+  }
 
   const toggleActive = () => {
     setSearchActive((active) => !active);
@@ -97,9 +108,9 @@ export default function Search() {
             ))}
 
           {data && data.products.data.length > 4 && (
-            <Link to={`/filter?title=${inputValue}`} className="search__button">
+            <button className="search__button" onClick={handleFindMore}>
               Find More...
-            </Link>
+            </button>
           )}
         </div>
       )}

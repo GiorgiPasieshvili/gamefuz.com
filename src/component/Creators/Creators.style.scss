@@ -11,8 +11,13 @@
     }
   }
 
-  &__link {
+  &__button {
     background: var(--color-backgrounds);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
   }
 
   &__image {

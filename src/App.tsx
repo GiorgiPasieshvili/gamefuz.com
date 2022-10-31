@@ -9,6 +9,7 @@ import "style/main.scss";
 /* page & layout imports */
 import Header from "component/Header";
 import Footer from "component/Footer";
+import Filter from "component/Filter";
 import Homepage from "route/Homepage";
 import ProductPage from "route/ProductPage";
 import FilterPage from "route/FilterPage";
@@ -18,6 +19,7 @@ export default function App() {
     <Router>
       <div className={"app " + useTheme()}>
         <Header />
+        <Filter />
         <main className="main">
           <ScrollToTop>
             <Routes>
