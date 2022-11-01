@@ -1,86 +1,94 @@
-/* import assets & styles */
+/* Import react stuff */
+import { useState, useEffect, KeyboardEvent } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+/* Import assets & styles */
 import { BiSearch } from "react-icons/bi";
 import "./Search.style.scss";
-
-import { useState, useEffect } from "react";
-
+/* Import graphql stuff */
 import { useQuery } from "@apollo/client";
 import { GET_SEARCHED_PRODUCTS } from "query/SearchedProducts.query";
 
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-
 /** @namespace @component/Search/Component */
 export default function Search() {
-  const [inputValue, setInputValue] = useState("");
-  const [searchActive, setSearchActive] = useState(false);
-
-  let filters = {
-    title: {
-      containsi: inputValue,
-    },
-  };
-
-  const { error, data } = useQuery(GET_SEARCHED_PRODUCTS, {
-    variables: { filters },
-  });
-
-  const onChange = (e: any) => {
-    setInputValue(e.target.value);
-    setSearchActive(true);
-  };
-
-  const onDocClick = (e: any) => {
-    if (
-      !e.target.classList.contains("search__result") &&
-      !e.target.classList.contains("search__input") &&
-      !e.target.classList.contains("search__icon")
-    ) {
-      setSearchActive(false);
-    }
-  };
-
+  const [searchValue, setSearchValue] = useState<string>("");
+  const [searchActive, setSearchActive] = useState<boolean>(false);
+  const [filters, setFilters] = useState<object>({});
   const navigate = useNavigate();
-  
-  const handleFindMore = () => {
-    navigate("/filter", {
-      state: {
-        title: inputValue,
-      },
-    });
-  }
 
   const toggleActive = () => {
     setSearchActive((active) => !active);
   };
 
+  const handleSearchInput = (e: { target: { value: string } }) => {
+    const { value } = e.target;
+    setSearchValue(value);
+    setSearchActive(true);
+  };
+
+  const handleOutsideClick = (e: { target: any }) => {
+    const { classList } = e.target;
+    if (
+      !classList.contains("search__result") &&
+      !classList.contains("search__input") &&
+      !classList.contains("search__icon")
+    ) {
+      setSearchActive(false);
+    }
+  };
+
+  const handleFindMore = () => {
+    navigate("/filter", {
+      state: {
+        title: searchValue,
+      },
+    });
+  };
+
+  const handlePressEnter = (e: KeyboardEvent) => {
+    const { key } = e;
+    if (key === "Enter") {
+      handleFindMore();
+      setSearchActive(false);
+    }
+  };
+
   useEffect(() => {
-    document.addEventListener("click", onDocClick);
+    document.addEventListener("click", handleOutsideClick);
 
     return () => {
-      document.removeEventListener("click", onDocClick);
+      document.removeEventListener("click", handleOutsideClick);
     };
   }, []);
 
-  if (error) return <p>Error..</p>;
+  useEffect(() => {
+    setFilters({
+      title: {
+        containsi: searchValue,
+      },
+    });
+  }, [searchValue]);
 
-  // if (loading) return <p>...</p>;
+  const { data } = useQuery(GET_SEARCHED_PRODUCTS, {
+    variables: { filters },
+  });
 
   return (
     <div className={`search ${searchActive ? "active" : ""}`}>
       <div className="search__bar">
         <input
-          onChange={onChange}
-          value={inputValue}
           className="search__input"
           type="text"
+          value={searchValue}
           placeholder="Search.."
+          onChange={handleSearchInput}
+          onKeyDown={handlePressEnter}
         />
         <button onClick={toggleActive} className="search__icon icon">
           <BiSearch style={{ pointerEvents: "none" }} />
         </button>
       </div>
-      {inputValue !== "" && (
+      {searchValue !== "" && (
         <div className="search__result">
           {data &&
             (data.products.data.length === 0 ? (
