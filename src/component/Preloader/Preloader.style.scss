@@ -1,0 +1,62 @@
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--color-body);
+  transition: all 0.6s ease-out;
+}
+
+.preloader__message {
+  position: fixed;
+  top: calc(50% + 4rem);
+  left: calc(50%);
+  transform: translateX(-50%);
+
+  transition: all 0.6s ease-out;
+  visibility: hidden;
+  opacity: 0;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 1.875rem);
+  left: calc(50% - 1.875rem);
+  border: 6px solid #fff;
+  border-color: var(--color-primary) transparent var(--color-primary)
+    transparent;
+  border-radius: 50%;
+  width: 3.75rem;
+  height: 3.75rem;
+  -webkit-animation: animate-preloader 1.5s linear infinite;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

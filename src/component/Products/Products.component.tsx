@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { SwiperSlide } from "swiper/react";
 /* assets & styles import */
+import Preloader from "component/Preloader";
 import Carousel from "component/Carousel";
 import "./Products.style.scss";
 
@@ -12,7 +13,7 @@ import { GET_RECENT_PRODUCTS } from "query/RecentProducts.query";
 export default function Products({ title, type }: any) {
   const { loading, error, data } = useQuery(GET_RECENT_PRODUCTS);
 
-  if (loading) return <div className="preloader"></div>;
+  if (loading) return <Preloader />;
   if (error) return <p>Error..</p>;
 
   return (

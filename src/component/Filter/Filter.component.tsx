@@ -4,6 +4,7 @@ import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 
 /* Import styles & assets */
+import Preloader from "component/Preloader";
 import "./Filter.style.scss";
 import { AiOutlineMenuUnfold, AiOutlineClose } from "react-icons/ai";
 import { SELECT_STYLES, LANGUAGES } from "./Filter.config";
@@ -54,7 +55,7 @@ export default function Filter() {
   } = useQuery(GET_ALL_CREATORS);
 
   if (genresLoading || creatorsLoading)
-    return <div className="preloader"></div>;
+    return <Preloader />
   if (genresError || creatorsError) return <p>Error..</p>;
 
   const genresOptions = genresData.genres.data.map((item: any) => ({

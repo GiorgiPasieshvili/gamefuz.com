@@ -1,6 +1,7 @@
 /* utilities import */
 import { SwiperSlide } from "swiper/react";
 /* assets & styles import */
+import Preloader from "component/Preloader";
 import Carousel from "component/Carousel";
 import "./Creators.style.scss";
 
@@ -25,7 +26,7 @@ export default function Creators() {
     });
   };
 
-  if (loading) return <div className="preloader"></div>;
+  if (loading) return <Preloader />;
   if (error) return <p>Error..</p>;
 
   return (

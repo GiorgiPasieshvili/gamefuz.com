@@ -3,6 +3,7 @@ import InnerSlider from "component/InnerSlider";
 import Details from "component/Details";
 import Products from "component/Products";
 import Comments from "component/Comments";
+import Preloader from "component/Preloader";
 
 import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
@@ -15,7 +16,7 @@ export default function ProductPage() {
     variables: { id },
   });
 
-  if (loading) return <div className="preloader"></div>;
+  if (loading) return <Preloader />;
   if (error) return <p>Error..</p>;
 
   return (

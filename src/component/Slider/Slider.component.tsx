@@ -5,6 +5,7 @@ import SliderButtons from "component/SliderButtons";
 import SliderTitle from "component/SliderTitle";
 import SliderPagination from "component/SliderPagination";
 import SliderShowcase from "component/SliderShowcase";
+import Preloader from "component/Preloader";
 
 import { useQuery } from "@apollo/client";
 import { GET_SLIDER } from "query/Slider.query";
@@ -31,7 +32,7 @@ export default function Slider() {
     }
   }, [current, data]);
 
-  if (loading) return <div className="preloader"></div>;
+  if (loading) return <Preloader />;
   if (error) return <p>Error..</p>;
 
   // go to the next slide

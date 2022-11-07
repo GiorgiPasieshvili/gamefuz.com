@@ -6,6 +6,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_FILTERED_PRODUCTS } from "query/FilteredProducts.query";
 
+import Preloader from "component/Preloader";
+
 const SHOULD_SEARCH_LANGS = {
   0: ["eng", "rus-eng", "rus-eng-multi"],
   1: ["rus", "rus-eng", "rus-eng-multi"],
@@ -64,7 +66,7 @@ export default function FilterPage() {
     variables: { filters },
   });
 
-  if (loading) return <div className="preloader"></div>;
+  if (loading) return <Preloader />;
   if (error) return <p>Error..</p>;
 
   if (!data.products.data.length) {
