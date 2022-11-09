@@ -12,9 +12,10 @@
 
 .preloader__message {
   position: fixed;
-  top: calc(50% + 4rem);
+  top: calc(50% + 3.5rem);
   left: calc(50%);
   transform: translateX(-50%);
+  text-align: center;
 
   transition: all 0.6s ease-out;
   visibility: hidden;
@@ -29,8 +30,9 @@
 .preloader:before {
   content: "";
   position: fixed;
-  top: calc(50% - 1.875rem);
-  left: calc(50% - 1.875rem);
+  top: calc(50%);
+  left: calc(50%);
+  transform: translate(-50%, -50%);
   border: 6px solid #fff;
   border-color: var(--color-primary) transparent var(--color-primary)
     transparent;
@@ -43,20 +45,20 @@
 
 @-webkit-keyframes animate-preloader {
   0% {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
 @keyframes animate-preloader {
   0% {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
