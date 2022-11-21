@@ -13,7 +13,7 @@ export default function Preloader() {
   return (
     <div className="preloader">
       <span className={`preloader__message ${showMessage ? "show" : ""}`}>
-        please wait! server might just sleeping...
+        please wait...
       </span>
     </div>
   );
